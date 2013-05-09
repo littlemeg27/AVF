@@ -16,7 +16,7 @@
 	
 	ul.ui-listview
 	{
-		margin-top: 200px;
+		margin-top: 100px;
 		padding-left: 30px;
 		padding-right: 30px;
 	}
@@ -48,5 +48,22 @@
 	{
 		color: #ffffff;
 		text-shadow: 1px 1px 1px #000000;
+	}
+	
+	#bodyText
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		text-align: center;
+		font-size: larger;
+	}
+	
+	#bodyText2
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		text-align: center;
+		margin-bottom: 100px;
+		font-size: large;
 	}
 
