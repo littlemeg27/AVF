@@ -1,4 +1,8 @@
 
+	*{
+	    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	 }
+	
 	.ui-body-c,
 	.ui-overlay-c 
 	{
@@ -28,14 +32,14 @@
 	
 	li.ui-li.ui-li-divider
 	{
-		text-shadow: 2px #000000;
+		text-shadow: 1px 1px 1px #000000;
 		border: #811217;
 		background: -webkit-linear-gradient(#811217, #c1272d);
 	}
 	
 	header.ui-header
 	{
-		text-shadow: 2px #000000;
+		text-shadow: 1px 1px 1px #000000;
 		border: #811217;
 		background: -webkit-linear-gradient(#811217, #c1272d);
 	}
