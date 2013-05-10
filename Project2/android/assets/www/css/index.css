@@ -1,0 +1,79 @@
+
+	*{
+	    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	 }
+	
+	.ui-body-c,
+	.ui-overlay-c /* This is for the body */
+	{
+		border: 1px solid #820f13;
+		color: #ffffff /*{a-body-color}*/;
+		text-shadow: 0 1px 0 #444444;
+		background: url(../img/ladybug.png);
+		background-image: url(../img/ladybug.png);
+		
+	}
+	
+	ul.ui-listview   /* This is for the whole listview */
+	{
+		margin-top: 150px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	
+	li.ui-btn		/* This is for the listview buttons */
+	{
+		font-weight: bold;
+		font: red;
+		border: 1px solid black;
+		background: #4d4d4d;
+		opacity: 0.8;
+	}
+	
+	li.ui-li.ui-li-divider		/* This is for the listenview divider */
+	{
+		text-shadow: 1px 1px 1px #000000;
+		border: #811217;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+	}
+	
+	header.ui-header		/* This is for the header */
+	{
+		text-shadow: 1px 1px 1px #000000;
+		border: #811217;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+	}
+	
+	h3		/* This is for the h3 tags (the text inside the listview buttons) */
+	{
+		color: #ffffff;
+		text-shadow: 1px 1px 1px #000000;
+	}
+	
+	#bodyText		/* This is for the first line of the text on the home page */
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		text-align: center;
+		font-size: larger;
+		margin-top: 40px;
+	}
+	
+	#bodyText2		/* This is for the second line of text on the home page */
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		text-align: center;
+		margin-bottom: 40px;
+		font-size: large;
+	}
+	
+	a.ui-btn		/* This is for the navbar */
+	{
+		text-shadow: 1px 1px 1px #000000;
+		border: #811217;
+		background: -webkit-linear-gradient(#811217, #c1272d);	
+	}
+
+
+
