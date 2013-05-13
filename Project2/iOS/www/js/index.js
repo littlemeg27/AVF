@@ -6,6 +6,8 @@
 
 	$("#twitter").on("pageinit", function ()
 	{
+		var i;
+		var j;
 
 		var getTwitter = function() 
 		{
@@ -15,24 +17,26 @@
 				  function(data) 
 				  {
 				  console.log(data);
+				  alert("Im inside the function");
 				  
 					  for (i=0, j=data.results.length; i<j; i++) 
 					  {
+					  	  alert("im inside the for loop")
 						  $("#twitterList").append(
 						  "<li>" + "<img src='" + data.results[i].profile_image_url + "'/>" +  "<h1>" +
 						  data.results[i].from_user_name +
 						  "<li/>" + "<li/>" + "<p>" +
 						  data.results[i].text
-						  						);
-					   }
+						  						   );
+					  }
 				  
 				  $("#twitterList").listview("refresh");
 				  });
 				  
-		};
+		 };
 			  location.reload();
 		  
-	});
+	 });
 	
 
 
