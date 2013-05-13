@@ -1,4 +1,57 @@
-/*
+//Brenna Pavlinchak
+//AVF 1305
+//Project 2
+//This is the project where 
+
+
+	$("#twitter").on("pageinit", function ()
+	{
+
+		var getTwitter = function() 
+		{
+	
+			 $.getJSON('http://search.twitter.com/search.json?q=kid%20president&rpp=10&lang=en&include_entities=true&result_type=popular&callback=?',
+			  
+				  function(data) 
+				  {
+				  console.log(data);
+				  
+					  for (i=0, j=data.results.length; i<j; i++) 
+					  {
+						  $("#twitterList").append(
+						  "<li>" + "<img src='" + data.results[i].profile_image_url + "'/>" +  "<h1>" +
+						  data.results[i].from_user_name +
+						  "<li/>" + "<li/>" + "<p>" +
+						  data.results[i].text
+						  						);
+					   }
+				  
+				  $("#twitterList").listview("refresh");
+				  });
+				  
+		};
+			  location.reload();
+		  
+	});
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Commenting this out in case I need it
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,7 +69,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+/*var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -46,4 +99,4 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
-};
+};*/

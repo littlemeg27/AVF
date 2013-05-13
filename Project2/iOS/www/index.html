@@ -129,8 +129,8 @@
 						<li data-role="list-divider">JSON-P API's:</li>
 						
 						<li>
-							<a href="#football" data-ajax="false">
-							<h3>Fantasy Football API</h3>
+							<a href="#twitter" data-ajax="false">
+							<h3>Twitter API</h3>
 							</a>
 						</li>
 						<li>
@@ -292,13 +292,14 @@
 			
 			<!--Start Of JSON Pages-->
 			
-			<div data-role="page" id="football">
+			<div data-role="page" id="twitter">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
-						<h1>Fantasy Football</h1>
+						<h1>Twitter API</h1>
 					</header>
 
 					<section>
+						<ul data-role="listview" id="twitterList" ></ul>
 					</section>
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
@@ -393,7 +394,7 @@
 			<script type="text/javascript" src="js/libs/jquery-1.8.2.min.js"></script>
 			<script type="text/javascript" src="js/libs/jquery.mobile-1.2.0.min.js"></script>
 			<script type="text/javascript" src="cordova-2.7.0.js"></script>
-			<script type="text/javascript" src="js/index.js"></script>
+			<script type="text/javascript" src="js/main.js"></script>
             app.initialize();
 			
 		</body>
