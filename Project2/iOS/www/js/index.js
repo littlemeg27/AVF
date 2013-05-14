@@ -12,7 +12,7 @@
 		var getTwitter = function() 
 		{
 	
-			 $.getJSON('http://search.twitter.com/search.json?q=kid%20president&rpp=10&lang=en&include_entities=true&result_type=popular&callback=?',
+			 $.getJSON('http://search.twitter.com/search.json?q=kid%20president&callback=?',
 			  
 				  function(data) 
 				  {
