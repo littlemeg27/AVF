@@ -31,8 +31,30 @@
 				  });
 	 });
 	
+	
+	$("#OMDB").on("pageinit", function ()
+	{
+		var i;
+		var j;
 
-
+			 $.getJSON('http://www.omdbapi.com/?s=Star%20Wars&y=&callback=?',
+			  
+				  function(data) 
+				  {
+				  console.log(data);
+				  
+					  for (i=0, j=data.results.length; i<j; i++) 
+					  {
+					  					  
+						  $("#OMDBList").append(
+						  "<li>" + "<img src='" + image + "'/>" +  "<h1>" +
+						  userName + "<ul/>" + "<ul/>" + "<p>" + text
+						  						   );
+					  }
+					  $("#OMDBList").listview("refresh");
+				  
+				  });
+	 });
 
 
 
