@@ -1,7 +1,7 @@
 //Brenna Pavlinchak
 //AVF 1305
 //Project 2
-//This is the project where 
+//This is the project for iOS
 
 
 	$("#twitter").on("pageinit", function ()
@@ -37,37 +37,27 @@
 		var i;
 		var j;
 
-			 $.getJSON('http://www.omdbapi.com/?s=Star%20Wars&y=&callback=?',
+			 $.getJSON('http://www.omdbapi.com/?s=vampire&y=&callback=?',
 			  
 				  function(data) 
 				  {
 				  console.log(data);
 				  
-					  for (i=0, j=data.results.length; i<j; i++) 
+					  for (i=0, j=data.Search.length; i<j; i++) 
 					  {
+					  	var type = data.Search[i].Type;
+					  	var title = data.Search[i].Title;
+					  	var year = data.Search[i].Year;
 					  					  
 						  $("#OMDBList").append(
-						  "<li>" + "<img src='" + image + "'/>" +  "<h1>" +
-						  userName + "<ul/>" + "<ul/>" + "<p>" + text
+						  "<li>" + title + "<h1>" +
+						  year + "<ul/>" + "<ul/>" + "<p>" + type
 						  						   );
 					  }
 					  $("#OMDBList").listview("refresh");
 				  
 				  });
 	 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Commenting this out in case I need it
