@@ -1,3 +1,68 @@
+//Brenna Pavlinchak
+//AVF 1305
+//Project 2
+//This is the project for iOS
+
+
+	$("#twitter").on("pageinit", function ()
+	{
+		var i;
+		var j;
+
+			 $.getJSON('http://search.twitter.com/search.json?q="kid%20president"&callback=?',
+			  
+				  function(data) 
+				  {
+				  console.log(data);
+				  
+					  for (i=0, j=data.results.length; i<j; i++) 
+					  {
+					  var image = data.results[i].profile_image_url;
+					  var userName = data.results[i].from_user_name;
+					  var text = data.results[i].text;
+					  
+						  $("#twitterList").append(
+						  "<li>" + "<img src='" + image + "'/>" +  "<h1>" +
+						  userName + "<ul/>" + "<ul/>" + "<p>" + text
+						  						   );
+					  }
+					  $("#twitterList").listview("refresh");
+				  
+				  });
+	 });
+	
+	
+	$("#OMDB").on("pageinit", function ()
+	{
+		var i;
+		var j;
+
+			 $.getJSON('http://www.omdbapi.com/?s=vampire&y=&callback=?',
+			  
+				  function(data) 
+				  {
+				  console.log(data);
+				  
+					  for (i=0, j=data.Search.length; i<j; i++) 
+					  {
+					  	var type = data.Search[i].Type;
+					  	var title = data.Search[i].Title;
+					  	var year = data.Search[i].Year;
+					  					  
+						  $("#OMDBList").append(
+						  "<li>" + title + "<h1>" +
+						  year + "<ul/>" + "<ul/>" + "<p>" + type
+						  						   );
+					  }
+					  $("#OMDBList").listview("refresh");
+				  
+				  });
+	 });
+
+
+
+
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -16,7 +81,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+/*var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -46,4 +111,4 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
-};
+};*/
