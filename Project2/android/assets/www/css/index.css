@@ -74,6 +74,49 @@
 		border: #811217;
 		background: -webkit-linear-gradient(#811217, #c1272d);	
 	}
+	
+	#twitterList li:first-child		/* This is for the first li in the twitterList listview */
+	{ 
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-left: -100px;
+		margin-right: -100px;
+	}
+	
+	ul#twitterList.ui-listview		/* This is for the twitterList listview */
+	{
+		margin-left: 200px;
+		margin-right: 200px;
+	}
+	
+	#twitterList ul:first-child		/* This is for the padding between the title and text */
+	{
+		padding: 5px;
+	}
+	
+	.ui-li.ui-li-static		/* This is for the each li */ 
+	{
+		margin-bottom: 10px;
+		background-color: #ffffff;
+		border-color: #000000;
+		border-width: 2px;
+	}
+	
+	ul#OMDBList.ui-listview		/* This is for the twitterList listview */
+	{
+		margin-left: 200px;
+		margin-right: 200px;
+	}
+	
+	ul		/* This is for the ul of the IMDb */
+	{
+		padding-bottom: 5px;
+	}
+
+	
 
 
 

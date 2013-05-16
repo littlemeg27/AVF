@@ -1,7 +1,7 @@
 //Brenna Pavlinchak
 //AVF 1305
 //Project 2
-//This is the project where 
+//This is the project for iOS
 
 
 	$("#twitter").on("pageinit", function ()
@@ -45,29 +45,19 @@
 				  
 					  for (i=0, j=data.Search.length; i<j; i++) 
 					  {
+					  	var type = data.Search[i].Type;
+					  	var title = data.Search[i].Title;
+					  	var year = data.Search[i].Year;
 					  					  
 						  $("#OMDBList").append(
-						  "<li>" + data.Search[i].Title + "<h1>" +
-						  data.Search[i].Year + "<ul/>" + "<ul/>" + "<p>" + data.Search[i].Type
+						  "<li>" + title + "<h1>" +
+						  year + "<ul/>" + "<ul/>" + "<p>" + type
 						  						   );
 					  }
 					  $("#OMDBList").listview("refresh");
 				  
 				  });
 	 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Commenting this out in case I need it

@@ -41,7 +41,7 @@
 						
 						<li>
 							<a href="#native" data-ajax="false">
-							<h3>Native Demos for Android</h3>
+							<h3>Native Demos for iOS</h3>
 							</a>
 						</li>
 						<li>
@@ -60,7 +60,7 @@
 				<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
 					<div data-role="navbar">
 						<ul>
-							<li><a href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
+							<li><a href="#home">Home</a></li>
 						</ul>
 					</div><!-- /navbar -->
 				</footer>
@@ -70,6 +70,7 @@
 			<div data-role="page" id="native" data-add-back-btn="true">
 			
 				<header data-role="header" data-position="fixed" data-add-back-btn="true">
+					<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 					<h1>AVF Demo App</h1>
 				</header>
 				
@@ -120,6 +121,7 @@
 			<div data-role="page" id="json">
 			
 				<header data-role="header" data-position="fixed" data-add-back-btn="true">
+					<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 					<h1>AVF Demo App</h1>
 				</header>
 				
@@ -129,13 +131,13 @@
 						<li data-role="list-divider">JSON-P API's:</li>
 						
 						<li>
-							<a href="#football" data-ajax="false">
-							<h3>Fantasy Football API</h3>
+							<a href="#twitter" data-ajax="false">
+							<h3>Twitter API</h3>
 							</a>
 						</li>
 						<li>
-							<a href="#olympics" data-ajax="false">
-							<h3>2012 Olympics Stats</h3>
+							<a href="#OMDB" data-ajax="false">
+							<h3>OMDb API</h3>
 							</a>
 						</li>
 					</ul>
@@ -155,6 +157,7 @@
 			<div data-role="page" id="research">
 			
 				<header data-role="header" data-position="fixed" data-add-back-btn="true">
+					<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 					<h1>AVF Demo App</h1>
 				</header>
 				
@@ -197,6 +200,7 @@
 			<div data-role="page" id="contacts">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 						<h1>Contacts with Camera</h1>
 					</header>
 
@@ -216,6 +220,7 @@
 			<div data-role="page" id="gift">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 						<h1>Gift App</h1>
 					</header>
 
@@ -235,6 +240,7 @@
 			<div data-role="page" id="network">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 						<h1>Network</h1>
 					</header>
 
@@ -254,6 +260,7 @@
 			<div data-role="page" id="accelerometer">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 						<h1>Accelerometer</h1>
 					</header>
 
@@ -273,6 +280,7 @@
 			<div data-role="page" id="other">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 						<h1>Undecided</h1>
 					</header>
 
@@ -292,13 +300,15 @@
 			
 			<!--Start Of JSON Pages-->
 			
-			<div data-role="page" id="football">
+			<div data-role="page" id="twitter">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
-						<h1>Fantasy Football</h1>
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Twitter API</h1>
 					</header>
 
 					<section>
+						<ul data-role="listview" id="twitterList" ></ul>
 					</section>
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
@@ -310,13 +320,15 @@
 					</footer>
 			</div>
 			
-			<div data-role="page" id="olympics">
+			<div data-role="page" id="OMDB">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
-						<h1>2012 Olympics</h1>
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>OMDb API</h1>
 					</header>
 
 					<section>
+						<ul data-role="listview" id="OMDBList" ></ul>
 					</section>
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
@@ -335,6 +347,7 @@
 			<div data-role="page" id="week1">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 						<h1>Week One Research Topic</h1>
 					</header>
 
@@ -367,7 +380,6 @@
 						<p>Then change when and where it is needed.</p>
 										
 					</section>
-
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
 						<div data-role="navbar">
@@ -381,6 +393,7 @@
 			<div data-role="page" id="week2">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 						<h1>Week 2 Research Topic</h1>
 					</header>
 
@@ -400,6 +413,7 @@
 			<div data-role="page" id="week3">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
 						<h1>Week Three Research Topic</h1>
 					</header>
 
@@ -422,7 +436,6 @@
 			<script type="text/javascript" src="js/libs/jquery.mobile-1.2.0.min.js"></script>
 			<script type="text/javascript" src="cordova-2.7.0.js"></script>
 			<script type="text/javascript" src="js/index.js"></script>
-            app.initialize();
 			
 		</body>
 				
