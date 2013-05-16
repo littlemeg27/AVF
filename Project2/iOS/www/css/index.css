@@ -104,4 +104,15 @@
 		border-width: 2px;
 	}
 	
+	ul#OMDBList.ui-listview		/* This is for the twitterList listview */
+	{
+		margin-left: 200px;
+		margin-right: 200px;
+	}
+	
+	ul
+	{
+		padding-bottom: 5px;
+	}
+
 	

@@ -37,18 +37,18 @@
 		var i;
 		var j;
 
-			 $.getJSON('http://www.omdbapi.com/?s=Star%20Wars&y=&callback=?',
+			 $.getJSON('http://www.omdbapi.com/?s=vampire&y=&callback=?',
 			  
 				  function(data) 
 				  {
 				  console.log(data);
 				  
-					  for (i=0, j=data.results.length; i<j; i++) 
+					  for (i=0, j=data.Search.length; i<j; i++) 
 					  {
 					  					  
 						  $("#OMDBList").append(
-						  "<li>" + "<img src='" + image + "'/>" +  "<h1>" +
-						  userName + "<ul/>" + "<ul/>" + "<p>" + text
+						  "<li>" + data.Search[i].Title + "<h1>" +
+						  data.Search[i].Year + "<ul/>" + "<ul/>" + "<p>" + data.Search[i].Type
 						  						   );
 					  }
 					  $("#OMDBList").listview("refresh");
