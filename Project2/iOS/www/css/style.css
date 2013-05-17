@@ -81,14 +81,14 @@
 		background: -webkit-linear-gradient(#811217, #c1272d);
 		padding-top: 30px;
 		padding-bottom: 30px;
-		margin-left: -100px;
-		margin-right: -100px;
+		margin-left: -50px;
+		margin-right: -50px;
 	}
 	
 	ul#twitterList.ui-listview		/* This is for the twitterList listview */
 	{
-		margin-left: 200px;
-		margin-right: 200px;
+		margin-left: 100px;
+		margin-right: 100px;
 	}
 	
 	#twitterList ul:first-child		/* This is for the padding between the title and text */
@@ -106,13 +106,26 @@
 	
 	ul#OMDBList.ui-listview		/* This is for the twitterList listview */
 	{
-		margin-left: 200px;
-		margin-right: 200px;
+		margin-left: 100px;
+		margin-right: 100px;
 	}
 	
-	ul		/* This is for the ul of the IMDb */
+	h1.title.ui-li-heading		/* This is for the header of the IMDb */
 	{
-		padding-bottom: 5px;
+		text-align: center;
+		padding-bottom: -20px;
 	}
 
+	p.year.ui-li-desc		/* This is for the p tags in the li */
+	{
+		padding-top: 10px;
+		font-size: small;
+	}
 	
+	li.movie.ui-li.ui-li-static		/* This is for the p movie tag */
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+		opacity: 0.8;
+	}
