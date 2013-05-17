@@ -111,11 +111,25 @@
 		margin-right: 200px;
 	}
 	
-	ul		/* This is for the ul of the IMDb */
+	h1.title.ui-li-heading		/* This is for the header of the IMDb */
 	{
-		padding-bottom: 5px;
+		text-align: center;
+		padding-bottom: -20px;
 	}
 
+	p.year.ui-li-desc		/* This is for the p tags in the li */
+	{
+		padding-top: 10px;
+		font-size: small;
+	}
+	
+	li.movie.ui-li.ui-li-static		/* This is for the p movie tag */
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+		opacity: 0.8;
+	}
 	
 
 
