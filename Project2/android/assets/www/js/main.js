@@ -50,9 +50,9 @@
 					  	var year = data.Search[i].Year;
 					  					  
 						  $("#OMDBList").append(
-						  "<li>" + title + "<h1>" +
-						  year + "<ul/>" + "<ul/>" + "<p>" + type
-						  						   );
+						  "<li class='movie'>" + "<h1 class='title'>" + title + "</h>" +
+						  "<p class='year'>" + year + "<p>" + type
+						  					    );
 					  }
 					  $("#OMDBList").listview("refresh");
 				  
