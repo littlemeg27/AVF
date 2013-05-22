@@ -80,28 +80,23 @@
 						<li data-role="list-divider">Native Demos:</li>
 						
 						<li>
-							<a href="#contacts" data-ajax="false">
-							<h3>Contacts with Camera and Geolocation</h3>
+							<a href="#geo" data-ajax="false">
+							<h3>Geolocation</h3>
 							</a>
 						</li>
 						<li>
-							<a href="#gift" data-ajax="false">
-							<h3>Gift App with Barcode scanner</h3>
+							<a href="#media" data-ajax="false">
+							<h3>Media Player</h3>
 							</a>
 						</li>
 						<li>
-							<a href="#network" data-ajax="false">
-							<h3>Network</h3>
+							<a href="#compass" data-ajax="false">
+							<h3>Compass</h3>
 							</a>
 						</li>
 						<li>
 							<a href="#accelerometer" data-ajax="false">
 							<h3>Accelerometer</h3>
-							</a>
-						</li>
-						<li>
-							<a href="#other" data-ajax="false">
-							<h3>Other</h3>
 							</a>
 						</li>
 					</ul>
@@ -197,14 +192,15 @@
 			
 			<!--Start Of Native Pages-->
 
-			<div data-role="page" id="contacts">
+			<div data-role="page" id="geo">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
 						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
-						<h1>Contacts with Camera</h1>
+						<h1>Geolocation</h1>
 					</header>
 
 					<section>
+						<button type="button" id="geoButton">Get Geolocation</button>
 					</section>
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
@@ -217,11 +213,11 @@
 
 			</div>
 			
-			<div data-role="page" id="gift">
+			<div data-role="page" id="media">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
 						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
-						<h1>Gift App</h1>
+						<h1>Media Player</h1>
 					</header>
 
 					<section>
@@ -237,11 +233,11 @@
 				
 			</div>
 			
-			<div data-role="page" id="network">
+			<div data-role="page" id="compass">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
 						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
-						<h1>Network</h1>
+						<h1>Compass</h1>
 					</header>
 
 					<section>
@@ -275,25 +271,6 @@
 						</div><!-- /navbar -->
 					</footer>
 					
-			</div>
-			
-			<div data-role="page" id="other">
-
-					<header data-role="header" data-position="fixed" data-add-back-btn="true">
-						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
-						<h1>Undecided</h1>
-					</header>
-
-					<section>
-					</section>
-					
-					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
-						<div data-role="navbar">
-							<ul>
-								<li><a href="#home">Home</a></li>
-							</ul>
-						</div><!-- /navbar -->
-					</footer>
 			</div>
 			
 			<!--End Of Native Pages-->
