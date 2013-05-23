@@ -67,25 +67,30 @@
      
      $("#geo").on("pageshow", function ()
      {
-         // $("#geoButton").on("click", function ()
-          //{
+         $("#geoButton").on("click", function ()
+         {
           alert("im inside of the button");
                 
                 var getLocationSuccess = function(spot) 
                 {
                     alert("im inside of geo function");
-                    var lat = spot.coords.latitude;
+                    
+                    var latitude = spot.coords.latitude;
+                    var longitude = spot.coords.longitude;
+                    var altitude = spot.coords.altitude;
+                    var accuracy = spot.coords.accuracy;
+                    var altitudeAccuracy = spot.coords.altitudeAccuracy;
+                    var heading = spot.coords.heading;
+                    var speed = spot.coords.speed;
                     
                     
                     $("#geoList").append(
-                          'Latitude: '          + spot.coords.latitude          + '\n' +
-                          'Longitude: '         + spot.coords.longitude         + '\n' +
-                          'Altitude: '          + spot.coords.altitude          + '\n' +
-                          'Accuracy: '          + spot.coords.accuracy          + '\n' +
-                          'Altitude Accuracy: ' + spot.coords.altitudeAccuracy  + '\n' +
-                          'Heading: '           + spot.coords.heading           + '\n' +
-                          'Speed: '             + spot.coords.speed             + '\n' 
+                         "<li>" + "<ul>" + 'Latitude:' + latitude + "</ul>" + "<ul>" + 'Longitude:' + longitude + "</ul>" +
+                          		  "<ul>" + 'Altitude:' + altitude + "</ul>" + "<ul>" + 'Accuracy:' + accuracy + "</ul>" +
+						  		  "<ul>" + 'Altitude Accuracy:' + altitudeAccuracy + "</ul>" +
+						  		  "<ul>" + 'Heading:' + heading + "</ul>" + "<ul>" + 'Speed:' + speed + "</ul>"
                                          );
+										 $("#geoList").listview("refresh");
                 };
             
                 var getLocationError = function(error) 
@@ -98,8 +103,8 @@
                 
                 navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
                 
-                $("#geoList").listview("refresh");
-         // });
+                
+         });
             
             
              
@@ -123,24 +128,9 @@
 
 /********************************* Accelerometer ***************************************/    
      
-     $("#accelerometer").on("pageinit", function ()
+     $("#deviceInfo").on("pageinit", function ()
      {
-         function onSuccess(acceleration) 
-         {
-            alert('Acceleration X: ' + acceleration.x + '\n' +
-                  'Acceleration Y: ' + acceleration.y + '\n' +
-                  'Acceleration Z: ' + acceleration.z + '\n' +
-                  'Timestamp: '      + acceleration.timestamp + '\n');
-        };
-        
-        function onError() 
-        {
-            alert('onError!');
-        };
-        
-        var options = { frequency: 3000 };  // Update every 3 seconds
-        
-        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options); 
+         
             
      });
      
