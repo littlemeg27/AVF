@@ -4,121 +4,120 @@
 //This is the project for iOS
 
 
-/********************************* Twitter API ***************************************/	
-	
-	$("#twitter").on("pageinit", function ()
-	{
-		var i;
-		var j;
+/********************************* Twitter API ***************************************/    
+    
+    $("#twitter").on("pageinit", function ()
+    {
+        var i;
+        var j;
 
-			 $.getJSON('http://search.twitter.com/search.json?q="kid%20president"&callback=?',
-			  
-				  function(data) 
-				  {
-				  console.log(data);
-				  
-					  for (i=0, j=data.results.length; i<j; i++) 
-					  {
-					  var image = data.results[i].profile_image_url;
-					  var userName = data.results[i].from_user_name;
-					  var text = data.results[i].text;
-					  
-						  $("#twitterList").append(
-						  "<li>" + "<img alt='Twitter Picture' src='" + image + "'/>" + "<h1>" +
-						  userName + "</h1>" + "<p>" + text + "</p>"
-						  						   );
-					  }
-					  $("#twitterList").listview("refresh");
-				  
-				  });
-	 });
-	 
-	 
-/********************************* OMDB API ***************************************/		
-	
-	$("#OMDB").on("pageinit", function ()
-	{
-		var i;
-		var j;
+             $.getJSON('http://search.twitter.com/search.json?q="kid%20president"&callback=?',
+              
+                  function(data) 
+                  {
+                  console.log(data);
+                  
+                      for (i=0, j=data.results.length; i<j; i++) 
+                      {
+                      var image = data.results[i].profile_image_url;
+                      var userName = data.results[i].from_user_name;
+                      var text = data.results[i].text;
+                      
+                          $("#twitterList").append(
+                          "<li>" + "<img alt='Twitter Picture' src='" + image + "'/>" + "<h1>" +
+                          userName + "</h1>" + "<p>" + text + "</p>"
+                                                     );
+                      }
+                      $("#twitterList").listview("refresh");
+                  
+                  });
+     });
+     
+     
+/********************************* OMDB API ***************************************/        
+    
+    $("#OMDB").on("pageinit", function ()
+    {
+        var i;
+        var j;
 
-			 $.getJSON('http://www.omdbapi.com/?s=vampire&y=&callback=?',
-			  
-				  function(data) 
-				  {
-				  console.log(data);
-				  
-					  for (i=0, j=data.Search.length; i<j; i++) 
-					  {
-					  	var type = data.Search[i].Type;
-					  	var title = data.Search[i].Title;
-					  	var year = data.Search[i].Year;
-					  					  
-						  $("#OMDBList").append(
-						  "<li class='movie'>" + "<h1 class='title'>" + title + "</h1>" +
-						  "<p class='year'>" + year + "</p>" + "<p>" + type + "</p>"
-						  					    );
-					  }
-					  $("#OMDBList").listview("refresh");
-				  
-				  });
-	 });
-	 
-/********************************* Geolocation ***************************************/		 
-	 
-	 $("#geo").on("pageinit", function ()
-	 {
-				
-			$("#geoButton").on("click", function ()	
-			{		
-				
-				var getLocationSuccess = function(spot) 
-				{
-				    alert('Latitude: '          + spot.coords.latitude          + '\n' +
-				          'Longitude: '         + spot.coords.longitude         + '\n' +
-				          'Altitude: '          + spot.coords.altitude          + '\n' +
-				          'Accuracy: '          + spot.coords.accuracy          + '\n' +
-				          'Altitude Accuracy: ' + spot.coords.altitudeAccuracy  + '\n' +
-				          'Heading: '           + spot.coords.heading           + '\n' +
-				          'Speed: '             + spot.coords.speed             + '\n' +
-				};
-			
-			// onError Callback receives a PositionError object
-			//
-				function getLocationError(error) 
-				{
-				    alert('code: '    + error.code    + '\n' +
-				          'message: ' + error.message + '\n');
-				}
-			
-			navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
-			
-			};
+             $.getJSON('http://www.omdbapi.com/?s=vampire&y=&callback=?',
+              
+                  function(data) 
+                  {
+                  console.log(data);
+                  
+                      for (i=0, j=data.Search.length; i<j; i++) 
+                      {
+                          var type = data.Search[i].Type;
+                          var title = data.Search[i].Title;
+                          var year = data.Search[i].Year;
+                                            
+                          $("#OMDBList").append(
+                          "<li class='movie'>" + "<h1 class='title'>" + title + "</h1>" +
+                          "<p class='year'>" + year + "</p>" + "<p>" + type + "</p>"
+                                                  );
+                      }
+                      $("#OMDBList").listview("refresh");
+                  
+                  });
+     });
+     
+/********************************* Geolocation ***************************************/         
+     
+     $("#geo").on("pageinit", function ()
+     {
+                
+                var getLocationSuccess = function(spot) 
+                {
+                    alert("im inside of geo function");
+                    
+					$("#geoList").append(
+                    	  'Latitude: '          + spot.coords.latitude          + '\n' +
+                          'Longitude: '         + spot.coords.longitude         + '\n' +
+                          'Altitude: '          + spot.coords.altitude          + '\n' +
+                          'Accuracy: '          + spot.coords.accuracy          + '\n' +
+                          'Altitude Accuracy: ' + spot.coords.altitudeAccuracy  + '\n' +
+                          'Heading: '           + spot.coords.heading           + '\n' +
+                          'Speed: '             + spot.coords.speed             + '\n' 
+                         				);
+                };
+            
+                function getLocationError(error) 
+                {
+                    alert('code: '    + error.code    + '\n' +
+                          'message: ' + error.message + '\n');
+                }
+            
+            navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+            
+            
 
-	 });
-	 
-/********************************* Media ***************************************/		 
-	 
-	 $("#media").on("pageinit", function ()
-	 {
-				
-			
-	 });
-	 
-/********************************* Compass ***************************************/		 
-	 
-	 $("#compass").on("pageinit", function ()
-	 {
+     });
+     
+/********************************* Media ***************************************/         
+     
+     $("#media").on("pageinit", function ()
+     {
+                
+            
+     });
+     
+/********************************* Compass ***************************************/         
+     
+     $("#compass").on("pageinit", function ()
+     {
 
-	 });
+     });
 
-/********************************* Accelerometer ***************************************/	
-	 
-	 $("#accelerometer").on("pageinit", function ()
-	 {
-				
-			
-	 });
-	 
+/********************************* Accelerometer ***************************************/    
+     
+     $("#accelerometer").on("pageinit", function ()
+     {
+                
+            
+     });
+     
 
 
 
@@ -174,3 +173,9 @@
         console.log('Received Event: ' + id);
     }
 };*/
+
+
+
+
+
+
