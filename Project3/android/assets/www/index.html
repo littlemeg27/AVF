@@ -1,0 +1,452 @@
+<!DOCTYPE html> 
+<!--Brenna Pavlinchak-->
+<!--AVF 1305-->
+<!--Project 1-->
+<!--Making the landing page for AVF App-->
+
+<!--HTMLTAG-->
+
+	<html>
+		<head>
+			<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, 
+        							width=device-width, height=device-height, target-densitydpi=device-dpi"/>			
+         <title>AVF Application</title>
+
+		<!--css files here-->
+			<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" type="text/css"/>
+			<link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+		<!--Modernizr goes here-->
+			<script src="js/libs/modernizr.custom.64724.js"></script>		
+		</head>
+
+		<body>
+					
+			<div data-role="page" id="home">
+			
+				<header data-role="header" data-position="fixed">
+					<h1>AVF Demo App</h1>
+				</header>
+				
+				<section>
+				
+					<p id="bodyText">This is my Advanced Visual Frameworks application</p>
+					<p id="bodyText2">I am going to be adding Native features, JSON-P API's and Research Topics</p>
+						
+					<ul data-role="listview" data-inset="true">
+							
+						<li data-role="list-divider">Options:</li>
+						
+						<li>
+							<a href="#native" data-ajax="false">
+							<h3>Native Demos for Android</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#json" data-ajax="false">
+							<h3>JSON-P API's</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#research" data-ajax="false">
+							<h3>Research For AVF</h3>
+							</a>
+						</li>
+					</ul>
+				</section>
+				
+				<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#home">Home</a></li>
+						</ul>
+					</div><!-- /navbar -->
+				</footer>
+				
+			</div><!--End of #home page-->
+			
+			<div data-role="page" id="native" data-add-back-btn="true">
+			
+				<header data-role="header" data-position="fixed" data-add-back-btn="true">
+					<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+					<h1>AVF Demo App</h1>
+				</header>
+				
+				<section>
+					<ul data-role="listview" data-inset="true">
+						
+						<li data-role="list-divider">Native Demos:</li>
+						
+						<li>
+							<a href="#geo" data-ajax="false">
+							<h3>Geolocation</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#media" data-ajax="false">
+							<h3>Media Player</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#compass" data-ajax="false">
+							<h3>Compass</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#accelerometer" data-ajax="false">
+							<h3>Accelerometer</h3>
+							</a>
+						</li>
+					</ul>
+				</section>
+				
+				<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#home">Home</a></li>
+						</ul>
+					</div><!-- /navbar -->
+				</footer>
+				
+			</div><!--End of native page-->
+			
+			
+			<div data-role="page" id="json">
+			
+				<header data-role="header" data-position="fixed" data-add-back-btn="true">
+					<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+					<h1>AVF Demo App</h1>
+				</header>
+				
+				<section>
+					<ul data-role="listview" data-inset="true">
+						
+						<li data-role="list-divider">JSON-P API's:</li>
+						
+						<li>
+							<a href="#twitter" data-ajax="false">
+							<h3>Twitter API</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#OMDB" data-ajax="false">
+							<h3>OMDb API</h3>
+							</a>
+						</li>
+					</ul>
+				</section>
+				
+				<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#home">Home</a></li>
+						</ul>
+					</div><!-- /navbar -->
+				</footer>
+
+			</div><!--End of json page-->
+			
+			
+			<div data-role="page" id="research">
+			
+				<header data-role="header" data-position="fixed" data-add-back-btn="true">
+					<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+					<h1>AVF Demo App</h1>
+				</header>
+				
+				<section>
+					<ul data-role="listview" data-inset="true">
+						
+						<li data-role="list-divider">Weekly Research Topics:</li>
+						
+						<li>
+							<a href="#week1" data-ajax="false">
+							<h3>Week One Research Topic</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#week2" data-ajax="false">
+							<h3>Week Two Research Topic</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#week3" data-ajax="false">
+							<h3>Week Three Research Topic</h3>
+							</a>
+						</li>
+					</ul>
+				</section>
+				
+				<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+					<div data-role="navbar">
+						<ul>
+							<li><a href="#home">Home</a></li>
+						</ul>
+					</div><!-- /navbar -->
+				</footer>
+				
+			</div><!--End of research page-->
+
+			
+			<!--Start Of Native Pages-->
+
+			<div data-role="page" id="geo">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Geolocation</h1>
+					</header>
+
+					<section>
+						<button type="button" id="geoButton">Get Geolocation</button>
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+
+			</div>
+			
+			<div data-role="page" id="media">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Media Player</h1>
+					</header>
+
+					<section>
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+				
+			</div>
+			
+			<div data-role="page" id="compass">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Compass</h1>
+					</header>
+
+					<section>
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+
+			</div>
+			
+			<div data-role="page" id="accelerometer">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Accelerometer</h1>
+					</header>
+
+					<section>
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+					
+			</div>
+			
+			<!--End Of Native Pages-->
+			
+			<!--Start Of JSON Pages-->
+			
+			<div data-role="page" id="twitter">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Twitter API</h1>
+					</header>
+
+					<section>
+						<ul data-role="listview" id="twitterList" ></ul>
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+			</div>
+			
+			<div data-role="page" id="OMDB">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>OMDb API</h1>
+					</header>
+
+					<section>
+						<ul data-role="listview" id="OMDBList" ></ul>
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+			</div>
+			
+			<!--End Of JSON Pages-->
+			
+			<!--Start Of Research Pages-->
+			
+			<div data-role="page" id="week1">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Week One Research Topic</h1>
+					</header>
+
+					<section>
+					
+						<h1>Question One</h1>
+						<p>So today we have the ability to login to different sites like Pintrest, Groupon, Spotify with these sites and applications 	
+						<p>that we use almost everyday and with social networking sites like Facebook or twitter you can “login” so that you are using</p> 
+						<p>one universal username and password and the same with different payment options you would be doing the same thing.</p>
+						
+						<h1>Question Two</h1>
+						<p>So according to Programmableweb.com there are 258 JSON-P API’s to the over a thousand JSON API’s and the reason we use or</p>
+						<p>want to use JSON-P is that we can use the URL request to grab the data we need and then manipulate it the way we need</p>
+						<p>right then and there.</p>
+						
+						<h1>Question Three</h1>
+						<p>So from what I have seen JSON-P is very useful and used a lot in the geo-location aspect of the native device features to</p>
+						<p>work with Google maps or other resources.<p>
+						
+						<h1>Question Four</h1>
+						<p>Well last night I was working on my twitter API and I was trying to think about what I was going to pull in from twitter</p>
+						<p>and my mom just so happened to put on a video by the Kid President so I figured I might just pull in some YouTube videos</p>
+						<p>from him. As for design I like to keep it simple.</p>
+						
+						<h1>Question Five</h1>
+						<p>So for the lessons learned regarding workflow. Once you think you have finished writing the code you are working on before</p>
+						<p>running it always run it though a validator, if everything is working right then run the code so that you can test it even</p>
+						<p>if it is HTML or CSS to see how it works on the visual aspect if you think it works then play around with it if its on an</p>
+						<p>phone or tablet and think about how a user that isn’t experienced would think about using this app. 
+						<p>Then change when and where it is needed.</p>
+										
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+			</div>
+			
+			<div data-role="page" id="week2">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Week 2 Research Topic</h1>
+					</header>
+
+					<section>
+						<h1>Question One</h1>
+						<p>So the first part of the ways you could change code to be more accessible would be first put it though a beautifier like</p> 
+						<p>http://tools.arantius.com/tabifier or  http://www.digitalcoding.com/tools/html-beautifier.html and also make sure it is tabbed</p>
+						<p>out nicely so that its easy to read. Second use semantic tags like header, section and footer so that your not using a billion</p>
+						<p>div tags then comment out as needed to keep track of where everything is. The second part is the lay out of the app so that is</p>
+						<p>follows the rules of usability like having back buttons, clearly marked out pages and buttons and also an escape hatch to get</p>
+						<p>beck to the beginning of the app.</p>
+
+						
+						<h1>Question Two</h1>
+						<p>So when i searched for support on a Mobile Screen Reader I didn’t really find much other then self made videos which kind of</p>
+						<p>tells me that most of the instructions are probably online in writing which doesn’t make sense or you would have to spend</p>
+						<p>forever on the phone.  If I was to fix this I would make sure that it was a built in application or easy to download</p>
+						<p>application with very few steps to set up and use.</p>
+						
+						<h1>Question Three</h1>
+						<p>So I went into the Accessibility tab on my iPad it lists all kinds of modes to use for Accessibility like VoiceOver and</p>
+						<p>Guided Access. Guided Access is so that when you want someone or something (kitten) to stay inside a certain application</p>
+						<p>and cant escape of it you turn it on and have a few options when it comes down to motion or touch. The VoiceOver I didn’t</p>
+						<p>get much of a chance to play with but I believe it is just like it says it helps with blind or near blind people to be</p>
+						<p>able to use the ipad.
+
+						<p>The other device I saw was the Blackberry with the old OS, well old as of about two or three months ago. From what I saw</p>
+						<p>on the videos for the blackberry Accessibility it took using a computer to setup the whole thing, but the good part of it</p>
+						<p>was that it had keyboard shortcuts. But could read emails, calendars, Internet sites, and contacts.</p> 
+						
+						<h1>Question Four</h1>
+						<p>So for the iOS apps I found iBlink Radio, this application will read the newspaper and other publications. Also it will</p>
+						<p>play music for the visually impaired.</p> 
+
+						<p>I was unable to really find anything in the Google Play Store, but from some research I was able to find Text to Speech</p>
+						<p>Toy, which helps if you need to talk to someone who is deaf.</p>
+
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+
+			</div>
+			
+			<div data-role="page" id="week3">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Week Three Research Topic</h1>
+					</header>
+
+					<section>
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+			</div>
+			
+			<!--End Of Research Pages-->
+			
+			<!--Javascript here-->
+			<script type="text/javascript" src="js/libs/jquery-1.8.2.min.js"></script>
+			<script type="text/javascript" src="js/libs/jquery.mobile-1.2.0.min.js"></script>
+			<script type="text/javascript" src="cordova-2.7.0.js"></script>
+			<script type="text/javascript" src="js/main.js"></script>
+			
+		</body>
+				
+	</html>
