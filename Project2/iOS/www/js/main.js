@@ -22,8 +22,8 @@
 					  var text = data.results[i].text;
 					  
 						  $("#twitterList").append(
-						  "<li>" + "<img src='" + image + "'/>" +  "<h1>" +
-						  userName + "<ul/>" + "<ul/>" + "<p>" + text
+						  "<li>" + "<img alt='Twitter Picture' src='" + image + "'/>" + "<h1>" +
+						  userName + "</h1>" + "<p>" + text + "</p>"
 						  						   );
 					  }
 					  $("#twitterList").listview("refresh");
@@ -50,8 +50,8 @@
 					  	var year = data.Search[i].Year;
 					  					  
 						  $("#OMDBList").append(
-						  "<li class='movie'>" + "<h1 class='title'>" + title + "</h>" +
-						  "<p class='year'>" + year + "<p>" + type
+						  "<li class='movie'>" + "<h1 class='title'>" + title + "</h1>" +
+						  "<p class='year'>" + year + "</p>" + "<p>" + type + "</p>"
 						  					    );
 					  }
 					  $("#OMDBList").listview("refresh");
