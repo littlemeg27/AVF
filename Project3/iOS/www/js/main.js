@@ -65,33 +65,44 @@
      
 /********************************* Geolocation ***************************************/         
      
-     $("#geo").on("pageinit", function ()
+     $("#geo").on("pageshow", function ()
      {
+         // $("#geoButton").on("click", function ()
+          //{
+          alert("im inside of the button");
                 
                 var getLocationSuccess = function(spot) 
                 {
                     alert("im inside of geo function");
+                    var lat = spot.coords.latitude;
                     
-					$("#geoList").append(
-                    	  'Latitude: '          + spot.coords.latitude          + '\n' +
+                    
+                    $("#geoList").append(
+                          'Latitude: '          + spot.coords.latitude          + '\n' +
                           'Longitude: '         + spot.coords.longitude         + '\n' +
                           'Altitude: '          + spot.coords.altitude          + '\n' +
                           'Accuracy: '          + spot.coords.accuracy          + '\n' +
                           'Altitude Accuracy: ' + spot.coords.altitudeAccuracy  + '\n' +
                           'Heading: '           + spot.coords.heading           + '\n' +
                           'Speed: '             + spot.coords.speed             + '\n' 
-                         				);
+                                         );
                 };
             
-                function getLocationError(error) 
+                var getLocationError = function(error) 
                 {
-                    alert('code: '    + error.code    + '\n' +
-                          'message: ' + error.message + '\n');
-                }
+                    $("#geoList").append(
+                            'code: '    + error.code    + '\n' +
+                            'message: ' + error.message + '\n'
+                                        );
+                };
+                
+                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+                
+                $("#geoList").listview("refresh");
+         // });
             
-            navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
             
-            
+             
 
      });
      
@@ -114,7 +125,22 @@
      
      $("#accelerometer").on("pageinit", function ()
      {
-                
+         function onSuccess(acceleration) 
+         {
+            alert('Acceleration X: ' + acceleration.x + '\n' +
+                  'Acceleration Y: ' + acceleration.y + '\n' +
+                  'Acceleration Z: ' + acceleration.z + '\n' +
+                  'Timestamp: '      + acceleration.timestamp + '\n');
+        };
+        
+        function onError() 
+        {
+            alert('onError!');
+        };
+        
+        var options = { frequency: 3000 };  // Update every 3 seconds
+        
+        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options); 
             
      });
      
@@ -173,8 +199,6 @@
         console.log('Received Event: ' + id);
     }
 };*/
-
-
 
 
 
