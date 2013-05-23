@@ -105,9 +105,7 @@
                 
                 
          });
-            
-            
-             
+          
 
      });
      
@@ -130,7 +128,21 @@
      
      $("#deviceInfo").on("pageinit", function ()
      {
-         
+     	alert("im inside the page");
+     	
+         function getDeviceInfo() 
+         {
+         	 alert("Im inside info function");
+			 var device = $('#deviceProperties');
+
+			$("#infoList").html(
+						   		 'Device Name: '     + device.name     + '<br />' + 
+                            	 'Device PhoneGap: ' + device.phonegap + '<br />' + 
+								 'Device Platform: ' + device.platform + '<br />' + 
+								 'Device UUID: '     + device.uuid     + '<br />' + 
+								 'Device Version: '  + device.version  + '<br />'
+								 );
+		 }
             
      });
      
