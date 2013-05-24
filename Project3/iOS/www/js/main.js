@@ -152,7 +152,7 @@
 
 /********************************* Device Info ***************************************/    
      
-     $("#deviceInfo").on("pageinit", function ("deviceready", onDeviceReady, false)
+     $("#deviceInfo").on("pageinit", function ("deviceready", getDeviceInfo, false)
      {
      	alert("im inside the page");
      	
@@ -167,7 +167,7 @@
 								 'Device Platform: ' + device.platform + '<br />' + 
 								 'Device UUID: '     + device.uuid     + '<br />' + 
 								 'Device Version: '  + device.version  + '<br />'
-								 );
+							   );
 		 }
 		 
 		 
