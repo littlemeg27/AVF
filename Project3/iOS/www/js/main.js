@@ -86,11 +86,11 @@
                     
                     $("#geoList").append(
                          "<li>" + "<ul>" + 'Latitude:' + latitude + "</ul>" + "<ul>" + 'Longitude:' + longitude + "</ul>" +
-                          		  "<ul>" + 'Altitude:' + altitude + "</ul>" + "<ul>" + 'Accuracy:' + accuracy + "</ul>" +
-						  		  "<ul>" + 'Altitude Accuracy:' + altitudeAccuracy + "</ul>" +
-						  		  "<ul>" + 'Heading:' + heading + "</ul>" + "<ul>" + 'Speed:' + speed + "</ul>"
+                                    "<ul>" + 'Altitude:' + altitude + "</ul>" + "<ul>" + 'Accuracy:' + accuracy + "</ul>" +
+                                    "<ul>" + 'Altitude Accuracy:' + altitudeAccuracy + "</ul>" +
+                                    "<ul>" + 'Heading:' + heading + "</ul>" + "<ul>" + 'Speed:' + speed + "</ul>"
                                          );
-										 $("#geoList").listview("refresh");
+                                         $("#geoList").listview("refresh");
                 };
             
                 var getLocationError = function(error) 
@@ -113,22 +113,22 @@
      
      $("#media").on("pageinit", function ()
      {
-			function playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3") 
-			{
-			    var mediaPlayer = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3",
-			       
-			        function() 
-			        {
-			            console.log("playAudio():Audio Success");
-			        },
-			        
-			        function(err) 
-			        {
-			            console.log("playAudio():Audio Error: " + err);
-					});
-			
-			    mediaPlayer.play();
-			}
+         /*   function playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3") 
+            {
+                var mediaPlayer = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3",
+                   
+                    function() 
+                    {
+                        console.log("playAudio():Audio Success");
+                    },
+                    
+                    function(err) 
+                    {
+                        console.log("playAudio():Audio Error: " + err);
+                    });
+            
+                mediaPlayer.play();
+            }*/
         
             
      });
@@ -137,41 +137,50 @@
      
      $("#compass").on("pageinit", function ()
      {
-			function getCompassSuccess(heading) 
-			{
-				alert('Heading: ' + heading);
-			};
-	
-			function getCompassError() 
-			{
-			    alert('getCompassError!');
-			};
-	
-			navigator.compass.getCurrentHeading(getCompassSuccess, getCompassError);
+          $("#compassButton").on("click", function ()
+         {
+            function getCompassSuccess(heading) 
+            {
+                alert('Heading: ' + heading);
+            };
+    
+            function getCompassError() 
+            {
+                alert('getCompassError!');
+            };
+    
+            navigator.compass.getCurrentHeading(getCompassSuccess, getCompassError);
+            
+          });
      });
 
 /********************************* Device Info ***************************************/    
      
-     $("#deviceInfo").on("pageinit", function ("deviceready", getDeviceInfo, false)
+     $("#deviceInfo").on("pageinit", function ()
      {
-     	alert("im inside the page");
-     	
+         alert("im inside the page");
+         
          function getDeviceInfo() 
          {
-         	 alert("Im inside info function");
-			 var device = $('#deviceProperties');
+              alert("Im inside info function");
+             var device = $('#deviceProperties');
 
-			$("#infoList").html(
-						   		 'Device Name: '     + device.name     + '<br />' + 
-                            	 'Device PhoneGap: ' + device.phonegap + '<br />' + 
-								 'Device Platform: ' + device.platform + '<br />' + 
-								 'Device UUID: '     + device.uuid     + '<br />' + 
-								 'Device Version: '  + device.version  + '<br />'
-							   );
-		 }
-		 
-		 
-		/* document.addEventListener("deviceready", getDeviceInfo, false);
+            $('#infoList').append(
+            $('<li>').append(
+            $('<a>').attr("href", "#")
+                          .html(
+                                 'Device Name: '     + device.name     + '<br />' + 
+                                 'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                                 'Device Platform: ' + device.platform + '<br />' + 
+                                 'Device UUID: '     + device.uuid     + '<br />' + 
+                                 'Device Version: '  + device.version  + '<br />'
+                               )
+                               )
+                               );
+         }
+         
+         
+        /* document.addEventListener();
 
     // Cordova is ready
     //
@@ -179,11 +188,11 @@
         var element = document.getElementById('deviceProperties');
 
         element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
-				                            'Device Cordova: '  + device.cordova + '<br />' + 
-				                            'Device Platform: ' + device.platform + '<br />' + 
-				                            'Device UUID: '     + device.uuid     + '<br />' + 
-				                            'Device Model: '    + device.model     + '<br />' + 
-				                            'Device Version: '  + device.version  + '<br />';
+                                            'Device Cordova: '  + device.cordova + '<br />' + 
+                                            'Device Platform: ' + device.platform + '<br />' + 
+                                            'Device UUID: '     + device.uuid     + '<br />' + 
+                                            'Device Model: '    + device.model     + '<br />' + 
+                                            'Device Version: '  + device.version  + '<br />';
     }*/
 
             
@@ -244,7 +253,5 @@
         console.log('Received Event: ' + id);
     }
 };*/
-
-
 
 
