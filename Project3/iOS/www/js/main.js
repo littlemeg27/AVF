@@ -113,9 +113,9 @@
      
      $("#media").on("pageinit", function ()
      {
-			function playAudio(url) 
+			function playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3") 
 			{
-			    var my_media = new Media(url,
+			    var mediaPlayer = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3",
 			       
 			        function() 
 			        {
@@ -127,7 +127,7 @@
 			            console.log("playAudio():Audio Error: " + err);
 					});
 			
-			    my_media.play();
+			    mediaPlayer.play();
 			}
         
             
@@ -152,11 +152,26 @@
 
 /********************************* Device Info ***************************************/    
      
-     $("#deviceInfo").on("pageinit", function ()
+     $("#deviceInfo").on("pageinit", function ("deviceready", onDeviceReady, false)
      {
      	alert("im inside the page");
      	
-      document.addEventListener("deviceready", onDeviceReady, false);
+         function getDeviceInfo() 
+         {
+         	 alert("Im inside info function");
+			 var device = $('#deviceProperties');
+
+			$("#infoList").html(
+						   		 'Device Name: '     + device.name     + '<br />' + 
+                            	 'Device PhoneGap: ' + device.phonegap + '<br />' + 
+								 'Device Platform: ' + device.platform + '<br />' + 
+								 'Device UUID: '     + device.uuid     + '<br />' + 
+								 'Device Version: '  + device.version  + '<br />'
+								 );
+		 }
+		 
+		 
+		/* document.addEventListener("deviceready", getDeviceInfo, false);
 
     // Cordova is ready
     //
@@ -169,24 +184,8 @@
 				                            'Device UUID: '     + device.uuid     + '<br />' + 
 				                            'Device Model: '    + device.model     + '<br />' + 
 				                            'Device Version: '  + device.version  + '<br />';
-    }
-      
-      
-      
-      
-        /* function getDeviceInfo() 
-         {
-         	 alert("Im inside info function");
-			 var device = $('#deviceProperties');
+    }*/
 
-			$("#infoList").html(
-						   		 'Device Name: '     + device.name     + '<br />' + 
-                            	 'Device PhoneGap: ' + device.phonegap + '<br />' + 
-								 'Device Platform: ' + device.platform + '<br />' + 
-								 'Device UUID: '     + device.uuid     + '<br />' + 
-								 'Device Version: '  + device.version  + '<br />'
-								 );
-		 }*/
             
      });
      
