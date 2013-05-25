@@ -6,7 +6,7 @@
 
 /********************************* Twitter API ***************************************/    
     
-    $("#twitter").on("pageinit", function ()
+    $("#twitter").on("pageshow", function ()
     {
         var i;
         var j;
@@ -36,7 +36,7 @@
      
 /********************************* OMDB API ***************************************/        
     
-    $("#OMDB").on("pageinit", function ()
+    $("#OMDB").on("pageshow", function ()
     {
         var i;
         var j;
@@ -67,27 +67,32 @@
      
      $("#geo").on("pageshow", function ()
      {
-         // $("#geoButton").on("click", function ()
-          //{
-          alert("im inside of the button");
-                
+         $("#geoButton").on("click", function ()
+         {
                 var getLocationSuccess = function(spot) 
                 {
-                    alert("im inside of geo function");
-                    var lat = spot.coords.latitude;
+                    
+                    var latitude = spot.coords.latitude;
+                    var longitude = spot.coords.longitude;
+                    var altitude = spot.coords.altitude;
+                    var accuracy = spot.coords.accuracy;
+                    var altitudeAccuracy = spot.coords.altitudeAccuracy;
+                    var heading = spot.coords.heading;
+                    var speed = spot.coords.speed;
                     
                     
-                    $("#geoList").append(
-                          'Latitude: '          + spot.coords.latitude          + '\n' +
-                          'Longitude: '         + spot.coords.longitude         + '\n' +
-                          'Altitude: '          + spot.coords.altitude          + '\n' +
-                          'Accuracy: '          + spot.coords.accuracy          + '\n' +
-                          'Altitude Accuracy: ' + spot.coords.altitudeAccuracy  + '\n' +
-                          'Heading: '           + spot.coords.heading           + '\n' +
-                          'Speed: '             + spot.coords.speed             + '\n' 
-                                         );
+					$("#geoList").append(
+	                          'Latitude: '          + latitude          + '<br>' +
+	                          'Longitude: '         + longitude         + '<br>' +
+	                          'Altitude: '          + altitude          + '<br>' +
+	                          'Accuracy: '          + accuracy          + '<br>' +
+	                          'Altitude Accuracy: ' + altitudeAccuracy  + '<br>' +
+	                          'Heading: '           + heading           + '<br>' +
+	                          'Speed: '             + speed             + '<br>' 
+                                         );                                        
+                                         $("#geoList").listview("refresh");  
                 };
-            
+
                 var getLocationError = function(error) 
                 {
                     $("#geoList").append(
@@ -98,50 +103,116 @@
                 
                 navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
                 
-                $("#geoList").listview("refresh");
-         // });
-            
-            
-             
+                
+         });
+          
 
      });
      
 /********************************* Media ***************************************/         
      
-     $("#media").on("pageinit", function ()
+     $("#connection").on("pageshow", function ()
      {
-                
-            
-     });
+     	
+     	
+	     	$("#connectionButton").on("click", function()
+	     	{
+			 	var unknown = "Connection Unknown";
+			 	var ethernet = "Connection Ethernet";
+			 	var wifi = "Connection Wifi";
+			 	var g2 = "Connection 2G";
+			 	var g3 = "Connection 3G";
+			 	var g4 = "Connection 4G";
+			 	var none = "Connection None";
+					     	
+			     switch(navigator.network.connection.type)
+			     {
+				     case Connection.UNKNOWN:
+					     $("#connectionID").attr('value', unknown);
+					     break;
+				     
+				     case Connection.ETHERNET:
+					     $("#connectionID").attr('value', ethernet);
+					     break;
+				     
+				     case Connection.WIFI:
+					     $("#connectionID").attr('value', wifi);
+					     break;
+				     
+				     case Connection.CELL_2G:
+					     $("#connectionID").attr('value', g2);
+					     break;
+				     
+				     case Connection.CELL_3G:
+					     $("#connectionID").attr('value', g3);
+					     break;
+				     
+				     case Connection.CELL_4G:
+					     $("#connectionID").attr('value', g4);
+					     break;
+					 case Connection.NONE:
+					     $("#connectionID").attr('value', none);
+					     break;			     
+			     }
+	         });
+      });
      
 /********************************* Compass ***************************************/         
      
      $("#compass").on("pageinit", function ()
      {
-
+	     	 var compassID = 0;
+	     	 
+	         $("#compassButton").on("click", function ()
+	         {
+		        var choice = null;
+		   
+				   if(compassID === 0)
+				   {
+					       choice = 
+					       {
+					           frequency: 100
+					       };
+		        
+						   compassID = navigator.compass.watchHeading(function(heading) 
+						   {
+				               var rotation = Math.round(heading.magnetic) + 'deg';
+				               
+						       $("#compassList").attr("value", heading.magneticHeading);
+						   }, 
+			   
+						   function(error) 
+						   {
+						      console.log("error");
+						   }, 
+						   
+						   choice 									);
+			   
+						   $(this).html("Stop Watching");
+				   }
+				   
+				   else
+				   {
+						   navigator.compass.clearWatch(compassID);
+						   compassID = 0;
+						   $(this).html("Watch Heading");
+				   }
+	
+	            
+	       });
      });
 
-/********************************* Accelerometer ***************************************/    
+/********************************* Device Info ***************************************/    
      
-     $("#accelerometer").on("pageinit", function ()
+     $("#deviceInfo").on("pageshow", function ()
      {
-         function onSuccess(acceleration) 
-         {
-            alert('Acceleration X: ' + acceleration.x + '\n' +
-                  'Acceleration Y: ' + acceleration.y + '\n' +
-                  'Acceleration Z: ' + acceleration.z + '\n' +
-                  'Timestamp: '      + acceleration.timestamp + '\n');
-        };
-        
-        function onError() 
-        {
-            alert('onError!');
-        };
-        
-        var options = { frequency: 3000 };  // Update every 3 seconds
-        
-        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options); 
-            
+              
+         $("#modelID").attr('value', device.name);
+         $("#platformID").attr('value', device.platform);
+         $("#versionID").attr('value', device.version);
+         $("#uuidID").attr('value', device.uuid);
+         $("#phonegapID").attr('value', device.phonegap);
+
      });
      
 
@@ -199,7 +270,5 @@
         console.log('Received Event: ' + id);
     }
 };*/
-
-
 
 
