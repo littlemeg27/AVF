@@ -69,11 +69,8 @@
      {
          $("#geoButton").on("click", function ()
          {
-          alert("im inside of the button");
-                
                 var getLocationSuccess = function(spot) 
                 {
-                    alert("im inside of geo function");
                     
                     var latitude = spot.coords.latitude;
                     var longitude = spot.coords.longitude;
@@ -84,18 +81,18 @@
                     var speed = spot.coords.speed;
                     
                     
-                    $("#geoList").append(
-	                          'Latitude: '          + latitude          + '\n' +
-	                          'Longitude: '         + longitude         + '\n' +
-	                          'Altitude: '          + altitude          + '\n' +
-	                          'Accuracy: '          + accuracy          + '\n' +
-	                          'Altitude Accuracy: ' + altitudeAccuracy  + '\n' +
-	                          'Heading: '           + heading           + '\n' +
-	                          'Speed: '             + speed             + '\n' 
-                                         );   
-                    $("#geoList").listview("refresh");
+					$("#geoList").append(
+	                          'Latitude: '          + latitude          + '<br>' +
+	                          'Longitude: '         + longitude         + '<br>' +
+	                          'Altitude: '          + altitude          + '<br>' +
+	                          'Accuracy: '          + accuracy          + '<br>' +
+	                          'Altitude Accuracy: ' + altitudeAccuracy  + '<br>' +
+	                          'Heading: '           + heading           + '<br>' +
+	                          'Speed: '             + speed             + '<br>' 
+                                         );                                        
+                                         $("#geoList").listview("refresh");  
                 };
-            
+
                 var getLocationError = function(error) 
                 {
                     $("#geoList").append(
@@ -114,11 +111,51 @@
      
 /********************************* Media ***************************************/         
      
-     $("#media").on("pageinit", function ()
+     $("#connection").on("pageshow", function ()
      {
-                
-            
-     });
+     	
+     	
+	     	$("#connectionButton").on("click", function()
+	     	{
+			 	var unknown = "Connection Unknown";
+			 	var ethernet = "Connection Ethernet";
+			 	var wifi = "Connection Wifi";
+			 	var g2 = "Connection 2G";
+			 	var g3 = "Connection 3G";
+			 	var g4 = "Connection 4G";
+			 	var none = "Connection None";
+					     	
+			     switch(navigator.network.connection.type)
+			     {
+				     case Connection.UNKNOWN:
+					     $("#connectionID").attr('value', unknown);
+					     break;
+				     
+				     case Connection.ETHERNET:
+					     $("#connectionID").attr('value', ethernet);
+					     break;
+				     
+				     case Connection.WIFI:
+					     $("#connectionID").attr('value', wifi);
+					     break;
+				     
+				     case Connection.CELL_2G:
+					     $("#connectionID").attr('value', g2);
+					     break;
+				     
+				     case Connection.CELL_3G:
+					     $("#connectionID").attr('value', g3);
+					     break;
+				     
+				     case Connection.CELL_4G:
+					     $("#connectionID").attr('value', g4);
+					     break;
+					 case Connection.NONE:
+					     $("#connectionID").attr('value', none);
+					     break;			     
+			     }
+	         });
+      });
      
 /********************************* Compass ***************************************/         
      
@@ -165,18 +202,18 @@
 	       });
      });
 
-/********************************* Accelerometer ***************************************/    
+/********************************* Device Info ***************************************/    
      
-     $("#accelerometer").on("pageinit", function ()
+     $("#deviceInfo").on("pageshow", function ()
      {
-                
-            
+              
+         $("#modelID").attr('value', device.name);
+         $("#platformID").attr('value', device.platform);
+         $("#versionID").attr('value', device.version);
+         $("#uuidID").attr('value', device.uuid);
+         $("#phonegapID").attr('value', device.phonegap);
+
      });
-     
-
-
-
-
 
 
 /* Commenting this out in case I need it
