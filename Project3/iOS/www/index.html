@@ -85,8 +85,8 @@
 							</a>
 						</li>
 						<li>
-							<a href="#media">
-							<h3>Media Player</h3>
+							<a href="#connection">
+							<h3>Connection Check</h3>
 							</a>
 						</li>
 						<li>
@@ -214,15 +214,17 @@
 
 			</div>
 			
-			<div data-role="page" id="media">
+			<div data-role="page" id="connection">
 
 					<header data-role="header" data-position="fixed" data-add-back-btn="true">
 						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
-						<h1>Media Player</h1>
+						<h1>Connection Check</h1>
 					</header>
 
 					<section>
-						<ul data-role="listview" id="mediaList"></ul>
+						<a id="connectionButton" data-role="button">Check the Connection!</a>
+						<label id="connectionName">Connection Type!</label>
+						<input id="connectID"/>
 					</section>
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
@@ -265,7 +267,16 @@
 					</header>
 
 					<section>
-						<ul data-role="listview" id="infoList"></ul>
+						<label id="modelName">Model</label>
+						<input id="modelID"/>
+						<label id="platformName">Platform</label>
+						<input id="platformID"/>
+						<label id="versionName">Version</label>
+						<input id="versionID"/>
+						<label id="uuidName">UUID</label>
+						<input id="uuidID"/>
+						<label id="phonegapName">Phonegap Version</label>
+						<input id="phonegapID"/>
 					</section>
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->

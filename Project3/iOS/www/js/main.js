@@ -84,7 +84,7 @@
                     var speed = spot.coords.speed;
                     
                     
-                    $("#geoList").append(
+                 /*   $("#geoList").append(
 	                          'Latitude: '          + latitude          + '\n' +
 	                          'Longitude: '         + longitude         + '\n' +
 	                          'Altitude: '          + altitude          + '\n' +
@@ -92,8 +92,19 @@
 	                          'Altitude Accuracy: ' + altitudeAccuracy  + '\n' +
 	                          'Heading: '           + heading           + '\n' +
 	                          'Speed: '             + speed             + '\n' 
-                                         );                                         $("#geoList").listview("refresh");
+                                         );                                        
+                                         $("#geoList").listview("refresh"); */ 
                 };
+                
+                $("#modelID").attr('value', latitude);
+				$("#platformID").attr('value', longitude);
+				$("#versionID").attr('value', altitude);
+				$("#uuidID").attr('value', accuracy);
+				$("#phonegapID").attr('value', altitudeAccuracy);
+				$("#phonegapID").attr('value', heading);
+				$("#phonegapID").attr('value', speed);
+				
+
             
                 var getLocationError = function(error) 
                 {
@@ -113,27 +124,42 @@
      
 /********************************* Media ***************************************/         
      
-     $("#media").on("pageshow", function ()
+     $("#connection").on("pageshow", function ()
      {
-         /*   function playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3") 
-            {
-                var mediaPlayer = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3",
-                   
-                    function() 
-                    {
-                        console.log("playAudio():Audio Success");
-                    },
-                    
-                    function(err) 
-                    {
-                        console.log("playAudio():Audio Error: " + err);
-                    });
-            
-                mediaPlayer.play();
-            }*/
-        
-            
+     	connectionCheck();
+     	
+     	$("#connectionButton").on("click", connectionCheck);
      });
+     
+     function connectionCheck()
+     {
+	     switch(navigator.network.connection type)
+	     {
+		     case Connection.UNKNOWN:
+			     $("#connectID").attr('value', Connection Unknown);
+			     break;
+		     
+		     case Connection.ETHERNET:
+			     $("#connectID").attr('value', Connection Ethernet);
+			     break;
+		     
+		     case Connection.WIFI:
+			     $("#connectID").attr('value', Connection Wifi);
+			     break;
+		     
+		     case Connection.CELL_2G:
+			     $("#connectID").attr('value', Connection 2G);
+			     break;
+		     
+		     case Connection.CELL_3G:
+			     $("#connectID").attr('value', Connection 3G);
+			     break;
+		     
+		     case Connection.CELL_4G:
+			     $("#connectID").attr('value', Connection 4G);
+			     break;
+	     }
+     }
      
 /********************************* Compass ***************************************/         
      
@@ -184,44 +210,13 @@
      
      $("#deviceInfo").on("pageshow", function ()
      {
-         alert("im inside the page");
-         
-         function getDeviceInfo() 
-         {
-             alert("Im inside info function");
-             var device = $('#deviceProperties');
+              
+         $("#modelID").attr('value', device.name);
+         $("#platformID").attr('value', device.platform);
+         $("#versionID").attr('value', device.version);
+         $("#uuidID").attr('value', device.uuid);
+         $("#phonegapID").attr('value', device.phonegap);
 
-           /* $('#infoList').append(
-            $('<li>').append(
-            $('<a>').attr("href", "#")
-                          .html(*/
-                           alert('Device Name: '     + device.name     + '<br />' + 
-                                 'Device PhoneGap: ' + device.phonegap + '<br />' + 
-                                 'Device Platform: ' + device.platform + '<br />' + 
-                                 'Device UUID: '     + device.uuid     + '<br />' + 
-                                 'Device Version: '  + device.version  + '<br />'
-                              // )
-                              // )
-                               );
-         }
-         
-         
-        /* document.addEventListener();
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        var element = document.getElementById('deviceProperties');
-
-        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
-                                            'Device Cordova: '  + device.cordova + '<br />' + 
-                                            'Device Platform: ' + device.platform + '<br />' + 
-                                            'Device UUID: '     + device.uuid     + '<br />' + 
-                                            'Device Model: '    + device.model     + '<br />' + 
-                                            'Device Version: '  + device.version  + '<br />';
-    }*/
-
-            
      });
      
 
