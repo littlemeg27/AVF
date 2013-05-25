@@ -139,21 +139,45 @@
      
      $("#compass").on("pageinit", function ()
      {
-          $("#compassButton").on("click", function ()
-         {
-            function getCompassSuccess(heading) 
-            {
-                alert('Heading: ' + heading);
-            };
-    
-            function getCompassError() 
-            {
-                alert('getCompassError!');
-            };
-    
-            navigator.compass.getCurrentHeading(getCompassSuccess, getCompassError);
-            
-          });
+	     	 var compassID = 0;
+	     	 
+	         $("#compassButton").on("click", function ()
+	         {
+		        var choice = null;
+		   
+				   if(compassID === 0)
+				   {
+					       choice = 
+					       {
+					           frequency: 100
+					       };
+		        
+						   compassID = navigator.compass.watchHeading(function(heading) 
+						   {
+				               var rotation = Math.round(heading.magnetic) + 'deg';
+				               
+						       $("#compassList").attr("value", heading.magneticHeading);
+						   }, 
+			   
+						   function(error) 
+						   {
+						      console.log("error");
+						   }, 
+						   
+						   choice 									);
+			   
+						   $(this).html("Stop Watching");
+				   }
+				   
+				   else
+				   {
+						   navigator.compass.clearWatch(compassID);
+						   compassID = 0;
+						   $(this).html("Watch Heading");
+				   }
+	
+	            
+	       });
      });
 
 /********************************* Device Info ***************************************/    

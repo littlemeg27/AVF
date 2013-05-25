@@ -65,33 +65,50 @@
      
 /********************************* Geolocation ***************************************/         
      
-     $("#geo").on("pageinit", function ()
+     $("#geo").on("pageshow", function ()
      {
+         $("#geoButton").on("click", function ()
+         {
+          alert("im inside of the button");
                 
                 var getLocationSuccess = function(spot) 
                 {
                     alert("im inside of geo function");
-                    alert('Latitude: '          + spot.coords.latitude          + '\n' +
-                          'Longitude: '         + spot.coords.longitude         + '\n' +
-                          'Altitude: '          + spot.coords.altitude          + '\n' +
-                          'Accuracy: '          + spot.coords.accuracy          + '\n' +
-                          'Altitude Accuracy: ' + spot.coords.altitudeAccuracy  + '\n' +
-                          'Heading: '           + spot.coords.heading           + '\n' +
-                          'Speed: '             + spot.coords.speed             + '\n' 
-                          );
+                    
+                    var latitude = spot.coords.latitude;
+                    var longitude = spot.coords.longitude;
+                    var altitude = spot.coords.altitude;
+                    var accuracy = spot.coords.accuracy;
+                    var altitudeAccuracy = spot.coords.altitudeAccuracy;
+                    var heading = spot.coords.heading;
+                    var speed = spot.coords.speed;
+                    
+                    
+                    $("#geoList").append(
+	                          'Latitude: '          + latitude          + '\n' +
+	                          'Longitude: '         + longitude         + '\n' +
+	                          'Altitude: '          + altitude          + '\n' +
+	                          'Accuracy: '          + accuracy          + '\n' +
+	                          'Altitude Accuracy: ' + altitudeAccuracy  + '\n' +
+	                          'Heading: '           + heading           + '\n' +
+	                          'Speed: '             + speed             + '\n' 
+                                         );   
+                    $("#geoList").listview("refresh");
                 };
             
-            // onError Callback receives a PositionError object
-            //
-                function getLocationError(error) 
+                var getLocationError = function(error) 
                 {
-                    alert('code: '    + error.code    + '\n' +
-                          'message: ' + error.message + '\n');
-                }
-            
-            navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
-            
-            
+                    $("#geoList").append(
+                            'code: '    + error.code    + '\n' +
+                            'message: ' + error.message + '\n'
+                                        );
+                };
+                
+                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+                
+                
+         });
+          
 
      });
      
@@ -107,7 +124,45 @@
      
      $("#compass").on("pageinit", function ()
      {
-
+	     	 var compassID = 0;
+	     	 
+	         $("#compassButton").on("click", function ()
+	         {
+		        var choice = null;
+		   
+				   if(compassID === 0)
+				   {
+					       choice = 
+					       {
+					           frequency: 100
+					       };
+		        
+						   compassID = navigator.compass.watchHeading(function(heading) 
+						   {
+				               var rotation = Math.round(heading.magnetic) + 'deg';
+				               
+						       $("#compassList").attr("value", heading.magneticHeading);
+						   }, 
+			   
+						   function(error) 
+						   {
+						      console.log("error");
+						   }, 
+						   
+						   choice 									);
+			   
+						   $(this).html("Stop Watching");
+				   }
+				   
+				   else
+				   {
+						   navigator.compass.clearWatch(compassID);
+						   compassID = 0;
+						   $(this).html("Watch Heading");
+				   }
+	
+	            
+	       });
      });
 
 /********************************* Accelerometer ***************************************/    
