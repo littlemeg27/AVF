@@ -200,7 +200,8 @@
 					</header>
 
 					<section>
-						<button type="button" id="geoButton">Get Geolocation</button>
+						<a id="geoButton" data-role="button">Get Geolocation!</a>
+						<ul data-role="listview" id="geoList" href="#"></ul>
 					</section>
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
@@ -241,6 +242,8 @@
 					</header>
 
 					<section>
+						<a id="compassButton" data-role="button">Turn on Compass!</a>
+						<input id="compassList" type="number" value="0"/>
 					</section>
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
@@ -250,7 +253,6 @@
 							</ul>
 						</div><!-- /navbar -->
 					</footer>
-
 			</div>
 			
 			<div data-role="page" id="accelerometer">
