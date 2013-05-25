@@ -6,7 +6,7 @@
 
 /********************************* Twitter API ***************************************/    
     
-    $("#twitter").on("pageinit", function ()
+    $("#twitter").on("pageshow", function ()
     {
         var i;
         var j;
@@ -36,7 +36,7 @@
      
 /********************************* OMDB API ***************************************/        
     
-    $("#OMDB").on("pageinit", function ()
+    $("#OMDB").on("pageshow", function ()
     {
         var i;
         var j;
@@ -85,12 +85,14 @@
                     
                     
                     $("#geoList").append(
-                         "<li>" + "<ul>" + 'Latitude:' + latitude + "</ul>" + "<ul>" + 'Longitude:' + longitude + "</ul>" +
-                                    "<ul>" + 'Altitude:' + altitude + "</ul>" + "<ul>" + 'Accuracy:' + accuracy + "</ul>" +
-                                    "<ul>" + 'Altitude Accuracy:' + altitudeAccuracy + "</ul>" +
-                                    "<ul>" + 'Heading:' + heading + "</ul>" + "<ul>" + 'Speed:' + speed + "</ul>"
-                                         );
-                                         $("#geoList").listview("refresh");
+	                          'Latitude: '          + latitude          + '\n' +
+	                          'Longitude: '         + longitude         + '\n' +
+	                          'Altitude: '          + altitude          + '\n' +
+	                          'Accuracy: '          + accuracy          + '\n' +
+	                          'Altitude Accuracy: ' + altitudeAccuracy  + '\n' +
+	                          'Heading: '           + heading           + '\n' +
+	                          'Speed: '             + speed             + '\n' 
+                                         );                                         $("#geoList").listview("refresh");
                 };
             
                 var getLocationError = function(error) 
@@ -111,7 +113,7 @@
      
 /********************************* Media ***************************************/         
      
-     $("#media").on("pageinit", function ()
+     $("#media").on("pageshow", function ()
      {
          /*   function playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3") 
             {
@@ -156,26 +158,26 @@
 
 /********************************* Device Info ***************************************/    
      
-     $("#deviceInfo").on("pageinit", function ()
+     $("#deviceInfo").on("pageshow", function ()
      {
          alert("im inside the page");
          
          function getDeviceInfo() 
          {
-              alert("Im inside info function");
+             alert("Im inside info function");
              var device = $('#deviceProperties');
 
-            $('#infoList').append(
+           /* $('#infoList').append(
             $('<li>').append(
             $('<a>').attr("href", "#")
-                          .html(
-                                 'Device Name: '     + device.name     + '<br />' + 
+                          .html(*/
+                           alert('Device Name: '     + device.name     + '<br />' + 
                                  'Device PhoneGap: ' + device.phonegap + '<br />' + 
                                  'Device Platform: ' + device.platform + '<br />' + 
                                  'Device UUID: '     + device.uuid     + '<br />' + 
                                  'Device Version: '  + device.version  + '<br />'
-                               )
-                               )
+                              // )
+                              // )
                                );
          }
          
