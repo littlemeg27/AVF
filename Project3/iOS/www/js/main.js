@@ -69,11 +69,8 @@
      {
          $("#geoButton").on("click", function ()
          {
-          alert("im inside of the button");
-                
                 var getLocationSuccess = function(spot) 
                 {
-                    alert("im inside of geo function");
                     
                     var latitude = spot.coords.latitude;
                     var longitude = spot.coords.longitude;
@@ -84,28 +81,18 @@
                     var speed = spot.coords.speed;
                     
                     
-                 /*   $("#geoList").append(
-	                          'Latitude: '          + latitude          + '\n' +
-	                          'Longitude: '         + longitude         + '\n' +
-	                          'Altitude: '          + altitude          + '\n' +
-	                          'Accuracy: '          + accuracy          + '\n' +
-	                          'Altitude Accuracy: ' + altitudeAccuracy  + '\n' +
-	                          'Heading: '           + heading           + '\n' +
-	                          'Speed: '             + speed             + '\n' 
+					$("#geoList").append(
+	                          'Latitude: '          + latitude          + '<br>' +
+	                          'Longitude: '         + longitude         + '<br>' +
+	                          'Altitude: '          + altitude          + '<br>' +
+	                          'Accuracy: '          + accuracy          + '<br>' +
+	                          'Altitude Accuracy: ' + altitudeAccuracy  + '<br>' +
+	                          'Heading: '           + heading           + '<br>' +
+	                          'Speed: '             + speed             + '<br>' 
                                          );                                        
-                                         $("#geoList").listview("refresh"); */ 
+                                         $("#geoList").listview("refresh");  
                 };
-                
-                $("#modelID").attr('value', latitude);
-				$("#platformID").attr('value', longitude);
-				$("#versionID").attr('value', altitude);
-				$("#uuidID").attr('value', accuracy);
-				$("#phonegapID").attr('value', altitudeAccuracy);
-				$("#phonegapID").attr('value', heading);
-				$("#phonegapID").attr('value', speed);
-				
 
-            
                 var getLocationError = function(error) 
                 {
                     $("#geoList").append(
@@ -126,40 +113,49 @@
      
      $("#connection").on("pageshow", function ()
      {
-     	connectionCheck();
      	
-     	$("#connectionButton").on("click", connectionCheck);
-     });
-     
-     function connectionCheck()
-     {
-	     switch(navigator.network.connection type)
-	     {
-		     case Connection.UNKNOWN:
-			     $("#connectID").attr('value', Connection Unknown);
-			     break;
-		     
-		     case Connection.ETHERNET:
-			     $("#connectID").attr('value', Connection Ethernet);
-			     break;
-		     
-		     case Connection.WIFI:
-			     $("#connectID").attr('value', Connection Wifi);
-			     break;
-		     
-		     case Connection.CELL_2G:
-			     $("#connectID").attr('value', Connection 2G);
-			     break;
-		     
-		     case Connection.CELL_3G:
-			     $("#connectID").attr('value', Connection 3G);
-			     break;
-		     
-		     case Connection.CELL_4G:
-			     $("#connectID").attr('value', Connection 4G);
-			     break;
-	     }
-     }
+     	
+	     	$("#connectionButton").on("click", function()
+	     	{
+			 	var unknown = "Connection Unknown";
+			 	var ethernet = "Connection Ethernet";
+			 	var wifi = "Connection Wifi";
+			 	var g2 = "Connection 2G";
+			 	var g3 = "Connection 3G";
+			 	var g4 = "Connection 4G";
+			 	var none = "Connection None";
+					     	
+			     switch(navigator.network.connection.type)
+			     {
+				     case Connection.UNKNOWN:
+					     $("#connectionID").attr('value', unknown);
+					     break;
+				     
+				     case Connection.ETHERNET:
+					     $("#connectionID").attr('value', ethernet);
+					     break;
+				     
+				     case Connection.WIFI:
+					     $("#connectionID").attr('value', wifi);
+					     break;
+				     
+				     case Connection.CELL_2G:
+					     $("#connectionID").attr('value', g2);
+					     break;
+				     
+				     case Connection.CELL_3G:
+					     $("#connectionID").attr('value', g3);
+					     break;
+				     
+				     case Connection.CELL_4G:
+					     $("#connectionID").attr('value', g4);
+					     break;
+					 case Connection.NONE:
+					     $("#connectionID").attr('value', none);
+					     break;			     
+			     }
+	         });
+      });
      
 /********************************* Compass ***************************************/         
      
