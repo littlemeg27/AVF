@@ -1,0 +1,136 @@
+
+	*{
+	    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	 }
+	
+	.ui-body-c,
+	.ui-overlay-c /* This is for the body */
+	{
+		border: 1px solid #820f13;
+		color: #ffffff /*{a-body-color}*/;
+		text-shadow: 0 1px 0 #444444;
+		background: url(../img/ladybug.png);
+		background-image: url(../img/ladybug.png);
+		
+	}
+	
+	ul.ui-listview   /* This is for the whole listview */
+	{
+		margin-top: 150px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	
+	li.ui-btn		/* This is for the listview buttons */
+	{
+		font-weight: bold;
+		font: red;
+		border: 1px solid black;
+		background: #4d4d4d;
+		opacity: 0.8;
+	}
+	
+	li.ui-li.ui-li-divider		/* This is for the listenview divider */
+	{
+		text-shadow: 1px 1px 1px #000000;
+		border: #811217;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+	}
+	
+	header.ui-header		/* This is for the header */
+	{
+		text-shadow: 1px 1px 1px #000000;
+		border: #811217;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+	}
+	
+	h3		/* This is for the h3 tags (the text inside the listview buttons) */
+	{
+		color: #ffffff;
+		text-shadow: 1px 1px 1px #000000;
+	}
+	
+	#bodyText		/* This is for the first line of the text on the home page */
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		text-align: center;
+		font-size: larger;
+		margin-top: 40px;
+	}
+	
+	#bodyText2		/* This is for the second line of text on the home page */
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		text-align: center;
+		margin-bottom: 40px;
+		font-size: large;
+	}
+	
+	a.ui-btn		/* This is for the navbar */
+	{
+		text-shadow: 1px 1px 1px #000000;
+		border: #811217;
+		background: -webkit-linear-gradient(#811217, #c1272d);	
+	}
+	
+	#twitterList li:first-child		/* This is for the first li in the twitterList listview */
+	{ 
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	
+	ul#twitterList.ui-listview		/* This is for the twitterList listview */
+	{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	#twitterList ul:first-child		/* This is for the padding between the title and text */
+	{
+		padding: 5px;
+	}
+	
+	.ui-li.ui-li-static		/* This is for the each li */ 
+	{
+		margin-bottom: 10px;
+		background-color: #ffffff;
+		border-color: #000000;
+		border-width: 2px;
+	}
+	
+	ul#OMDBList.ui-listview		/* This is for the twitterList listview */
+	{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	h1.title.ui-li-heading		/* This is for the header of the IMDb */
+	{
+		text-align: center;
+		padding-bottom: -20px;
+	}
+
+	p.year.ui-li-desc		/* This is for the p tags in the li */
+	{
+		padding-top: 10px;
+		font-size: small;
+	}
+	
+	li.movie.ui-li.ui-li-static		/* This is for the p movie tag */
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+		opacity: 0.8;
+	}
+	
+
+
+
