@@ -129,3 +129,21 @@
 		background: -webkit-linear-gradient(#811217, #c1272d);
 		opacity: 0.8;
 	}
+	
+	
+	@media only screen 
+	and (min-device-width : 1080px) 
+	and (max-device-width : 1920px)
+	{ /* STYLES GO HERE */}
+
+	@media only screen 
+	and (min-device-width : 1080px) 
+	and (max-device-width : 1920px) 
+	and (orientation : landscape)
+	{ /* STYLES GO HERE */}
+
+	@media only screen 
+	and (min-device-width : 1080px) 
+	and (max-device-width : 1920px) 
+	and (orientation : portrait)
+	{ /* STYLES GO HERE */ }
