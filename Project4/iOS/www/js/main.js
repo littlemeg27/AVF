@@ -1,6 +1,6 @@
 //Brenna Pavlinchak
 //AVF 1305
-//Project 2
+//Project 4
 //This is the project for iOS
 
 
@@ -11,7 +11,8 @@
         var i;
         var j;
 
-             $.getJSON('http://search.twitter.com/search.json?q="kid%20president"&callback=?',
+             $.getJSON('http://search.twitter.com/search.json?q="kid%20president"&callback=?/1.1/geo/reverse_geocode.json',
+             //https://api.twitter.com/1.1/geo/reverse_geocode.json?lat=latitude&long=longitude
               
                   function(data) 
                   {
