@@ -19,7 +19,7 @@
 					alert(latitude);
 					
 			
-		             $.getJSON('http://twitter.com/search?geocode=' +latitude+ ',' +longitude + '&callback=?',
+		             $.getJSON('http://search.twitter.com/search.json?q=&geocode='+latitude+','+longitude+',50km&callback=?',
              
                   function(data) 
                   {
