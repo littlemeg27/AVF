@@ -16,10 +16,10 @@
                 {
                     var latitude = spot.coords.latitude;
                     var longitude = spot.coords.longitude;
-					var url = 'http://twitter.com/search?geocode=' +latitude+ ',' +longitude + '&callback=?';
-					alert(url);
+					alert(latitude);
+					
 			
-		             $.getJSON('http://twitter.com/search?geocode=' +latitude+ ',' +longitude + '&callback=?'
+		             $.getJSON('http://twitter.com/search?geocode=' +latitude+ ',' +longitude + '&callback=?',
              
                   function(data) 
                   {
