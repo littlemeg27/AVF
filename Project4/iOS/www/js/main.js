@@ -10,12 +10,20 @@
     {
         var i;
         var j;
-
-             $.getJSON('http://search.twitter.com/search.json?q="kid%20president"&callback=?/1.1/geo/reverse_geocode.json',
-             //https://api.twitter.com/1.1/geo/reverse_geocode.json?lat=latitude&long=longitude
-              
+			
+			
+			var getLocationSuccess = function(spot) 
+                {
+                    var latitude = spot.coords.latitude;
+                    var longitude = spot.coords.longitude;
+					var url = 'http://twitter.com/search?geocode=' +latitude+ ',' +longitude + '&callback=?';
+					alert(url);
+			
+		             $.getJSON('http://twitter.com/search?geocode=' +latitude+ ',' +longitude + '&callback=?'
+             
                   function(data) 
                   {
+                  alert("data");
                   console.log(data);
                   
                       for (i=0, j=data.results.length; i<j; i++) 
@@ -32,6 +40,19 @@
                       $("#twitterList").listview("refresh");
                   
                   });
+                  };
+                  
+                  var getLocationError = function(error) 
+                {
+                    $("#geoList").append(
+                            'code: '    + error.code    + '\n' +
+                            'message: ' + error.message + '\n'
+                                        );
+                };
+                
+                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+
+
      });
      
      
