@@ -6,24 +6,15 @@
 
 /********************************* Twitter API ***************************************/    
     
-    $("#twitter").on("pageshow", function ()
+ $("#twitter").on("pageshow", function ()
     {
         var i;
         var j;
-			
-			
-			var getLocationSuccess = function(spot) 
-                {
-                    var latitude = spot.coords.latitude;
-                    var longitude = spot.coords.longitude;
-					alert(latitude);
-					
-			
-		             $.getJSON('http://search.twitter.com/search.json?q=&geocode='+latitude+','+longitude+',50km&callback=?',
-             
+
+             $.getJSON('http://search.twitter.com/search.json?q="kid%20president"&callback=?',
+              
                   function(data) 
                   {
-                  alert("data");
                   console.log(data);
                   
                       for (i=0, j=data.results.length; i<j; i++) 
@@ -40,21 +31,7 @@
                       $("#twitterList").listview("refresh");
                   
                   });
-                  };
-                  
-                  var getLocationError = function(error) 
-                {
-                    $("#geoList").append(
-                            'code: '    + error.code    + '\n' +
-                            'message: ' + error.message + '\n'
-                                        );
-                };
-                
-                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
-
-
      });
-     
      
 /********************************* OMDB API ***************************************/        
     
@@ -236,6 +213,116 @@
          $("#phonegapID").attr('value', device.phonegap);
 
      });
+     
+/********************************* Twitter Mashup ***************************************/    
+    
+    $("#twitterMash").on("pageshow", function ()
+    {
+        var i;
+        var j;
+			
+			
+			var getLocationSuccess = function(spot) 
+                {
+                    var latitude = spot.coords.latitude;
+                    var longitude = spot.coords.longitude;
+					alert(latitude);
+					
+			
+		             $.getJSON('http://search.twitter.com/search.json?q=&geocode='+latitude+','+longitude+',50km&callback=?',
+             
+                  function(data) 
+                  {
+                  alert("data");
+                  console.log(data);
+                  
+                      for (i=0, j=data.results.length; i<j; i++) 
+                      {
+                      var image = data.results[i].profile_image_url;
+                      var userName = data.results[i].from_user_name;
+                      var text = data.results[i].text;
+                      
+                          $("#twitterMashList").append(
+                          "<li>" + "<img alt='Twitter Picture' src='" + image + "'/>" + "<h1>" +
+                          userName + "</h1>" + "<p>" + text + "</p>"
+                                                     );
+                      }
+                      $("#twitterMashList").listview("refresh");
+                  
+                  });
+                  };
+                  
+                  var getLocationError = function(error) 
+                {
+                    $("#twitterMashList").append(
+                            'code: '    + error.code    + '\n' +
+                            'message: ' + error.message + '\n'
+                                        );
+                };
+                
+                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+
+
+     });
+     
+    
+/********************************* BBY Mashup ***************************************/      
+
+	$("#bbyMash").on("pageshow", function ()
+	    {
+	        var i;
+	        var j;
+				
+				
+				var getLocationSuccess = function(spot) 
+	                {
+	                    var latitude = spot.coords.latitude;
+	                    var longitude = spot.coords.longitude;
+						alert(latitude);
+						
+				
+			             $.getJSON('http://api.remix.bestbuy.com/v1/stores[optional](area('+latitude+','+longitude+'))[/optional]?
+			             			au7saha6228xbtamz4scfwqxq=[u7saha6228xbtamz4scfwqxq]
+			             			[optional]&show=distance,name,address,lat,lng,phone[/optional]&callback=?',
+	             
+	                  function(data) 
+	                  {
+	                  alert("data");
+	                  console.log(data);
+	                  
+	                      for (i=0, j=data.results.length; i<j; i++) 
+	                      {
+	                      var image = data.results[i].profile_image_url;
+	                      var userName = data.results[i].from_user_name;
+	                      var text = data.results[i].text;
+	                      
+	                          $("#bbyMashList").append(
+	                          "<li>" + "<img alt='Twitter Picture' src='" + image + "'/>" + "<h1>" +
+	                          userName + "</h1>" + "<p>" + text + "</p>"
+	                                                     );
+	                      }
+	                      $("#bbyMashList").listview("refresh");
+	                  
+	                  });
+	                  };
+	                  
+	                  var getLocationError = function(error) 
+	                {
+	                    $("#bbyMashList").append(
+	                            'code: '    + error.code    + '\n' +
+	                            'message: ' + error.message + '\n'
+	                                        );
+	                };
+	                
+	                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+	
+	
+	     });
+	     
+	     
+	     
+	     
+	  //http://api.remix.bestbuy.com/v1/stores[optional](area(38.89,-77.03,10))[/optional]?apiKey=[apikey][optional]&show=distance,name,address,lat,lng,phone[/optional]
      
 
 
