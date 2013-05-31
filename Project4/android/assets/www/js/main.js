@@ -298,8 +298,8 @@
 	                      var distance = data.stores[i].distance;
 	                      
 	                          $("#bbyMashList").append(
-	                          "<li>" + "<h1>" + name + "</h1>" + "<p>" + phone + "</p>" + 
-	                          "<p>" + storeId + "</p>" + "<p>" + distance + "</p>"
+	                          "<li class='store'>" + "<h1 class='storeName'>" + name + "</h1>" + "<p class='storePhone'> Phone Number: " + phone + "</p>" + 
+	                          "<p class='storeNumber'> Store Number: " + storeId + "</p>" + "<p class='storeDistance'>Distance: " + distance + "</p>"
 	                                                     );
 	                      }
 	                      $("#bbyMashList").listview("refresh");

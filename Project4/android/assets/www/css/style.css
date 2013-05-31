@@ -9,19 +9,18 @@
 		border: 1px solid #820f13;
 		color: #ffffff /*{a-body-color}*/;
 		text-shadow: 0 1px 0 #444444;
-		background: url(../img/ladybug.png);
-		background-image: url(../img/ladybug.png);
+		background-image: url(#);
 		
 	}
 	
-	ul.ui-listview   /* This is for the whole listview */
+	ul.ui-listview  /* This is for the whole listview */
 	{
 		margin-top: 150px;
 		padding-left: 30px;
 		padding-right: 30px;
 	}
 	
-	li.ui-btn		/* This is for the listview buttons */
+	li.ui-btn   /* This is for the listview buttons */
 	{
 		font-weight: bold;
 		font: red;
@@ -30,49 +29,48 @@
 		opacity: 0.8;
 	}
 	
-	li.ui-li.ui-li-divider		/* This is for the listenview divider */
+	li.ui-li.ui-li-divider   /* This is for the listenview divider */
 	{
 		text-shadow: 1px 1px 1px #000000;
 		border: #811217;
 		background: -webkit-linear-gradient(#811217, #c1272d);
 	}
 	
-	header.ui-header		/* This is for the header */
+	header.ui-header   /* This is for the header */
 	{
 		text-shadow: 1px 1px 1px #000000;
 		border: #811217;
 		background: -webkit-linear-gradient(#811217, #c1272d);
 	}
 	
-	h3		/* This is for the h3 tags (the text inside the listview buttons) */
+	h3     /* This is for the h3 tags (the text inside the listview buttons) */
 	{
 		color: #ffffff;
 		text-shadow: 1px 1px 1px #000000;
 	}
 	
-	#bodyText		/* This is for the first line of the text on the home page */
+	#bodyText   /* This is for the first line of the text on the home page */
 	{
 		color: #ffffff;
 		text-shadow: 2px 2px 2px #000000;
 		text-align: center;
 		font-size: larger;
-		margin-top: 40px;
 	}
 	
-	#bodyText2		/* This is for the second line of text on the home page */
+	#bodyText2   /* This is for the second line of text on the home page */
 	{
 		color: #ffffff;
 		text-shadow: 2px 2px 2px #000000;
 		text-align: center;
-		margin-bottom: 40px;
+		margin-bottom: 100px;
 		font-size: large;
 	}
 	
-	a.ui-btn		/* This is for the navbar */
+	a.ui-btn   /* This is for the navbar */
 	{
 		text-shadow: 1px 1px 1px #000000;
 		border: #811217;
-		background: -webkit-linear-gradient(#811217, #c1272d);	
+		background: -webkit-linear-gradient(#811217, #c1272d);
 	}
 	
 	#twitterList li:first-child		/* This is for the first li in the twitterList listview */
@@ -82,14 +80,14 @@
 		background: -webkit-linear-gradient(#811217, #c1272d);
 		padding-top: 30px;
 		padding-bottom: 30px;
-		margin-left: -15px;
-		margin-right: -15px;
+		margin-left: -50px;
+		margin-right: -50px;
 	}
 	
 	ul#twitterList.ui-listview		/* This is for the twitterList listview */
 	{
-		margin-left: 10px;
-		margin-right: 10px;
+		margin-left: 100px;
+		margin-right: 100px;
 	}
 	
 	#twitterList ul:first-child		/* This is for the padding between the title and text */
@@ -107,8 +105,8 @@
 	
 	ul#OMDBList.ui-listview		/* This is for the twitterList listview */
 	{
-		margin-left: 10px;
-		margin-right: 10px;
+		margin-left: 100px;
+		margin-right: 100px;
 	}
 	
 	h1.title.ui-li-heading		/* This is for the header of the IMDb */
@@ -131,6 +129,90 @@
 		opacity: 0.8;
 	}
 	
+	h1.storeName.ui-li-heading
+	{
+		text-align: center
+	}
+	
+	p.storePhone.ui-li-desc
+	{
+		text-align: center
+	}
+	
+	p.storeNumber.ui-li-desc
+	{
+		text-align: center
+	}
+	
+	p.storeDistance.ui-li-desc
+	{
+		text-align: center
+	}
+	
+	li.store.ui-li.ui-li-static		/* This is for the p movie tag */
+	{
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+		opacity: 0.8;
+	}
+	
+	#twitterMashList li:first-child		/* This is for the first li in the twitterList listview */
+	{ 
+		color: #ffffff;
+		text-shadow: 2px 2px 2px #000000;
+		background: -webkit-linear-gradient(#811217, #c1272d);
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-left: -50px;
+		margin-right: -50px;
+	}
 
 
 
+	
+	
+	@media all and (min-width : 800px)
+	{ 
+		.ui-body-c,
+		.ui-overlay-c /* This is for the body */
+		{
+			border: 1px solid #820f13;
+			color: #000 /*{a-body-color}*/;
+			text-shadow: 0 1px 0 #444444;
+			background-image: url(../img/ladybug.png);
+			
+		}
+	}
+
+	@media only screen 
+	and (min-device-width : 300px) 
+	and (max-device-width : 480px) 
+	and (orientation : landscape)
+	{ 
+		.ui-body-c,
+		.ui-overlay-c /* This is for the body */
+		{
+			border: 1px solid #820f13;
+			color: #000 /*{a-body-color}*/;
+			text-shadow: 0 1px 0 #444444;
+			background-image: url(../img/ladybug.png);
+			
+		}
+	}
+
+	@media only screen 
+	and (min-device-width : 1080px) 
+	and (max-device-width : 1920px) 
+	and (orientation : portrait)
+	{ 
+		.ui-body-c,
+		.ui-overlay-c /* This is for the body */
+		{
+			border: 1px solid #820f13;
+			color: #000 /*{a-body-color}*/;
+			text-shadow: 0 1px 0 #444444;
+			background-image: url(../img/ladybug.png);
+			
+		}
+	}
