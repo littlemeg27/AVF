@@ -281,10 +281,14 @@
 						alert(latitude);
 						
 				
-			             $.getJSON('http://api.remix.bestbuy.com/v1/stores[optional](area('+latitude+','+longitude+'))[/optional]?
-			             			au7saha6228xbtamz4scfwqxq=[u7saha6228xbtamz4scfwqxq]
-			             			[optional]&show=distance,name,address,lat,lng,phone[/optional]&callback=?',
-	             
+			             $.getJSON('http://api.remix.bestbuy.com/v1/stores(area('+latitude+','+longitude+'))?
+			             show=storeId,name,hours,distance&format=json&callback=&apiKey=u7saha6228xbtamz4scfwqxq',
+									
+									//http://api.remix.bestbuy.com/v1/stores(area('+latitude+','+longitude+'))?show=storeId,name,hours,distance&format=json&callback=&apiKey=u7saha6228xbtamz4scfwqxq
+			             
+			             
+			             
+			             
 	                  function(data) 
 	                  {
 	                  alert("data");
@@ -292,13 +296,14 @@
 	                  
 	                      for (i=0, j=data.results.length; i<j; i++) 
 	                      {
-	                      var image = data.results[i].profile_image_url;
-	                      var userName = data.results[i].from_user_name;
-	                      var text = data.results[i].text;
+	                      var name = data.stores[i].name;
+	                      var hours = data.stores[i].hours;
+	                      var storeId = data.stores[i].storeId;
+	                      var distance = data.stores[i].distance;
 	                      
 	                          $("#bbyMashList").append(
-	                          "<li>" + "<img alt='Twitter Picture' src='" + image + "'/>" + "<h1>" +
-	                          userName + "</h1>" + "<p>" + text + "</p>"
+	                          "<li>" + "<h1>" + name + "</h1>" + "<p>" + hours + "</p>" + 
+	                          "<p>" + storeId + "</p>" + "<p>" + distance + "</p>"
 	                                                     );
 	                      }
 	                      $("#bbyMashList").listview("refresh");
@@ -318,14 +323,6 @@
 	
 	
 	     });
-	     
-	     
-	     
-	     
-	  //http://api.remix.bestbuy.com/v1/stores[optional](area(38.89,-77.03,10))[/optional]?apiKey=[apikey][optional]&show=distance,name,address,lat,lng,phone[/optional]
-     
-
-
 
 
 
