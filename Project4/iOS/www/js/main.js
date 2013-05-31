@@ -281,17 +281,15 @@
 						alert(latitude);
 						
 				
-			             $.getJSON('http://api.remix.bestbuy.com/v1/stores(area('+latitude+','+longitude+'))?
-			             show=storeId,name,phone,distance&format=json&callback=&apiKey=u7saha6228xbtamz4scfwqxq',
+			             $.getJSON('http://api.remix.bestbuy.com/v1/stores(area('+latitude+','+longitude+',25))?show=storeId,name,phone,distance&format=json&callback=&apiKey=u7saha6228xbtamz4scfwqxq',
 									
 							
 			       
 	                  function(data) 
 	                  {
-	                  alert("data");
 	                  console.log(data);
 	                  
-	                      for (i=0, j=data.results.length; i<j; i++) 
+	                      for (i=0, j=data.stores.length; i<j; i++) 
 	                      {
 	                      var name = data.stores[i].name;
 	                      var phone = data.stores[i].phone;
