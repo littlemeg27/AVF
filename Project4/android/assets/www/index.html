@@ -40,18 +40,28 @@
 						<li data-role="list-divider">Options:</li>
 						
 						<li>
-							<a href="#native" data-ajax="false">
-							<h3>Native Demos for Android</h3>
+							<a href="#native">
+							<h3>Native Demos for iOS</h3>
 							</a>
 						</li>
 						<li>
-							<a href="#json" data-ajax="false">
+							<a href="#json">
 							<h3>JSON-P API's</h3>
 							</a>
 						</li>
 						<li>
-							<a href="#research" data-ajax="false">
+							<a href="#research">
 							<h3>Research For AVF</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#twitterMash">
+							<h3>Twitter Mashup</h3>
+							</a>
+						</li>
+						<li>
+							<a href="#bbyMash">
+							<h3>Best Buy Mashup</h3>
 							</a>
 						</li>
 					</ul>
@@ -60,7 +70,7 @@
 				<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
 					<div data-role="navbar">
 						<ul>
-							<li><a href="#home">Home</a></li>
+							<li><a href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
 						</ul>
 					</div><!-- /navbar -->
 				</footer>
@@ -126,12 +136,12 @@
 						<li data-role="list-divider">JSON-P API's:</li>
 						
 						<li>
-							<a href="#twitter" data-ajax="false">
+							<a href="#twitter">
 							<h3>Twitter API</h3>
 							</a>
 						</li>
 						<li>
-							<a href="#OMDB" data-ajax="false">
+							<a href="#OMDB">
 							<h3>OMDb API</h3>
 							</a>
 						</li>
@@ -201,7 +211,7 @@
 
 					<section>
 						<a id="geoButton" data-role="button">Get Geolocation!</a>
-						<ul data-role="listview" id="geoList" href="#"></ul>
+						<ul data-role="listview" id="geoList"></ul>
 					</section>
 					
 					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
@@ -334,6 +344,52 @@
 			</div>
 			
 			<!--End Of JSON Pages-->
+			
+			<!--Start Of Mashup Pages-->
+			
+		    <div data-role="page" id="twitterMash">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Twitter Mashup</h1>
+					</header>
+
+					<section>
+						<ul data-role="listview" id="twitterMashList"></ul>
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+
+			 </div>
+			 
+			  <div data-role="page" id="bbyMash">
+
+					<header data-role="header" data-position="fixed" data-add-back-btn="true">
+						<a data-rel="back" data-icon="arrow-l" class="back, ui-btn-left">Back</a>
+						<h1>Best Buy Mashup</h1>
+					</header>
+
+					<section>
+						<ul data-role="listview" id="bbyMashList"></ul>
+					</section>
+					
+					<footer data-role="footer" data-id="theFooter" data-position="fixed"><!--footer open-->
+						<div data-role="navbar">
+							<ul>
+								<li><a href="#home">Home</a></li>
+							</ul>
+						</div><!-- /navbar -->
+					</footer>
+
+			 </div>
+			
+			<!--End Of Mahup Pages-->
 			
 			<!--Start Of Research Pages-->
 			

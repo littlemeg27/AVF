@@ -233,7 +233,6 @@
              
                   function(data) 
                   {
-                  alert("data");
                   console.log(data);
                   
                       for (i=0, j=data.results.length; i<j; i++) 
@@ -281,24 +280,24 @@
 						alert(latitude);
 						
 				
-			             $.getJSON('http://api.remix.bestbuy.com/v1/stores[optional](area('+latitude+','+longitude+'))[/optional]?
-			             			au7saha6228xbtamz4scfwqxq=[u7saha6228xbtamz4scfwqxq]
-			             			[optional]&show=distance,name,address,lat,lng,phone[/optional]&callback=?',
-	             
+			             $.getJSON('http://api.remix.bestbuy.com/v1/stores(area('+latitude+','+longitude+',25))?show=storeId,name,phone,distance&format=json&callback=&apiKey=u7saha6228xbtamz4scfwqxq',
+									
+							
+			       
 	                  function(data) 
 	                  {
-	                  alert("data");
 	                  console.log(data);
 	                  
-	                      for (i=0, j=data.results.length; i<j; i++) 
+	                      for (i=0, j=data.stores.length; i<j; i++) 
 	                      {
-	                      var image = data.results[i].profile_image_url;
-	                      var userName = data.results[i].from_user_name;
-	                      var text = data.results[i].text;
+	                      var name = data.stores[i].name;
+	                      var phone = data.stores[i].phone;
+	                      var storeId = data.stores[i].storeId;
+	                      var distance = data.stores[i].distance;
 	                      
 	                          $("#bbyMashList").append(
-	                          "<li>" + "<img alt='Twitter Picture' src='" + image + "'/>" + "<h1>" +
-	                          userName + "</h1>" + "<p>" + text + "</p>"
+	                          "<li class='store'>" + "<h1 class='storeName'>" + name + "</h1>" + "<p class='storePhone'> Phone Number: " + phone + "</p>" + 
+	                          "<p class='storeNumber'> Store Number: " + storeId + "</p>" + "<p class='storeDistance'>Distance: " + distance + "</p>"
 	                                                     );
 	                      }
 	                      $("#bbyMashList").listview("refresh");
@@ -318,14 +317,6 @@
 	
 	
 	     });
-	     
-	     
-	     
-	     
-	  //http://api.remix.bestbuy.com/v1/stores[optional](area(38.89,-77.03,10))[/optional]?apiKey=[apikey][optional]&show=distance,name,address,lat,lng,phone[/optional]
-     
-
-
 
 
 

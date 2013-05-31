@@ -214,6 +214,112 @@
          $("#phonegapID").attr('value', device.phonegap);
 
      });
+     
+/********************************* Twitter Mashup ***************************************/    
+    
+    $("#twitterMash").on("pageshow", function ()
+    {
+        var i;
+        var j;
+			
+			
+			var getLocationSuccess = function(spot) 
+                {
+                    var latitude = spot.coords.latitude;
+                    var longitude = spot.coords.longitude;
+					alert(latitude);
+					
+			
+		             $.getJSON('http://search.twitter.com/search.json?q=&geocode='+latitude+','+longitude+',50km&callback=?',
+             
+                  function(data) 
+                  {
+                  alert("data");
+                  console.log(data);
+                  
+                      for (i=0, j=data.results.length; i<j; i++) 
+                      {
+                      var image = data.results[i].profile_image_url;
+                      var userName = data.results[i].from_user_name;
+                      var text = data.results[i].text;
+                      
+                          $("#twitterMashList").append(
+                          "<li>" + "<img alt='Twitter Picture' src='" + image + "'/>" + "<h1>" +
+                          userName + "</h1>" + "<p>" + text + "</p>"
+                                                     );
+                      }
+                      $("#twitterMashList").listview("refresh");
+                  
+                  });
+                  };
+                  
+                  var getLocationError = function(error) 
+                {
+                    $("#twitterMashList").append(
+                            'code: '    + error.code    + '\n' +
+                            'message: ' + error.message + '\n'
+                                        );
+                };
+                
+                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+
+
+     });
+     
+    
+/********************************* BBY Mashup ***************************************/      
+
+	$("#bbyMash").on("pageshow", function ()
+	    {
+	        var i;
+	        var j;
+				
+				
+				var getLocationSuccess = function(spot) 
+	                {
+	                    var latitude = spot.coords.latitude;
+	                    var longitude = spot.coords.longitude;
+						alert(latitude);
+						
+				
+			             $.getJSON('http://api.remix.bestbuy.com/v1/stores(area('+latitude+','+longitude+',25))?show=storeId,name,phone,distance&format=json&callback=&apiKey=u7saha6228xbtamz4scfwqxq',
+									
+							
+			       
+	                  function(data) 
+	                  {
+	                  console.log(data);
+	                  
+	                      for (i=0, j=data.stores.length; i<j; i++) 
+	                      {
+	                      var name = data.stores[i].name;
+	                      var phone = data.stores[i].phone;
+	                      var storeId = data.stores[i].storeId;
+	                      var distance = data.stores[i].distance;
+	                      
+	                          $("#bbyMashList").append(
+	                          "<li class='store'>" + "<h1 class='storeName'>" + name + "</h1>" + "<p class='storePhone'> Phone Number: " + phone + "</p>" + 
+	                          "<p class='storeNumber'> Store Number: " + storeId + "</p>" + "<p class='storeDistance'>Distance: " + distance + "</p>"
+	                                                     );
+	                      }
+	                      $("#bbyMashList").listview("refresh");
+	                  
+	                  });
+	                  };
+	                  
+	                  var getLocationError = function(error) 
+	                {
+	                    $("#bbyMashList").append(
+	                            'code: '    + error.code    + '\n' +
+	                            'message: ' + error.message + '\n'
+	                                        );
+	                };
+	                
+	                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+	
+	
+	     });     
+
 
 
 /* Commenting this out in case I need it

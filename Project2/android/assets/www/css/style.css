@@ -131,6 +131,50 @@
 		opacity: 0.8;
 	}
 	
+	@media all and (min-width : 800px)
+	{ 
+		.ui-body-c,
+		.ui-overlay-c /* This is for the body */
+		{
+			border: 1px solid #820f13;
+			color: #000 /*{a-body-color}*/;
+			text-shadow: 0 1px 0 #444444;
+			background-image: url(../img/ladybug.png);
+			
+		}
+	}
+
+	@media only screen 
+	and (min-device-width : 300px) 
+	and (max-device-width : 480px) 
+	and (orientation : landscape)
+	{ 
+		.ui-body-c,
+		.ui-overlay-c /* This is for the body */
+		{
+			border: 1px solid #820f13;
+			color: #000 /*{a-body-color}*/;
+			text-shadow: 0 1px 0 #444444;
+			background-image: url(../img/ladybug.png);
+			
+		}
+	}
+
+	@media only screen 
+	and (min-device-width : 1080px) 
+	and (max-device-width : 1920px) 
+	and (orientation : portrait)
+	{ 
+		.ui-body-c,
+		.ui-overlay-c /* This is for the body */
+		{
+			border: 1px solid #820f13;
+			color: #000 /*{a-body-color}*/;
+			text-shadow: 0 1px 0 #444444;
+			background-image: url(../img/ladybug.png);
+			
+		}
+	}	
 
 
 
