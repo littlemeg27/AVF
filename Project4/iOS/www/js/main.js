@@ -282,13 +282,10 @@
 						
 				
 			             $.getJSON('http://api.remix.bestbuy.com/v1/stores(area('+latitude+','+longitude+'))?
-			             show=storeId,name,hours,distance&format=json&callback=&apiKey=u7saha6228xbtamz4scfwqxq',
+			             show=storeId,name,phone,distance&format=json&callback=&apiKey=u7saha6228xbtamz4scfwqxq',
 									
-									//http://api.remix.bestbuy.com/v1/stores(area('+latitude+','+longitude+'))?show=storeId,name,hours,distance&format=json&callback=&apiKey=u7saha6228xbtamz4scfwqxq
-			             
-			             
-			             
-			             
+							
+			       
 	                  function(data) 
 	                  {
 	                  alert("data");
@@ -297,12 +294,12 @@
 	                      for (i=0, j=data.results.length; i<j; i++) 
 	                      {
 	                      var name = data.stores[i].name;
-	                      var hours = data.stores[i].hours;
+	                      var phone = data.stores[i].phone;
 	                      var storeId = data.stores[i].storeId;
 	                      var distance = data.stores[i].distance;
 	                      
 	                          $("#bbyMashList").append(
-	                          "<li>" + "<h1>" + name + "</h1>" + "<p>" + hours + "</p>" + 
+	                          "<li>" + "<h1>" + name + "</h1>" + "<p>" + phone + "</p>" + 
 	                          "<p>" + storeId + "</p>" + "<p>" + distance + "</p>"
 	                                                     );
 	                      }
