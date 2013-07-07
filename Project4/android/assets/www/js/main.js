@@ -101,7 +101,7 @@
                                         );
                 };
                 
-                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError, { enableHighAccuracy: true });
                 
                 
          });
@@ -261,7 +261,7 @@
                                         );
                 };
                 
-                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError, { enableHighAccuracy: true });
 
 
      });
@@ -315,7 +315,7 @@
 	                                        );
 	                };
 	                
-	                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError);
+	                navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationError, { enableHighAccuracy: true });
 	
 	
 	     });     

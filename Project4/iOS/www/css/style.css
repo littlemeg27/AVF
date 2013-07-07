@@ -164,8 +164,8 @@
 		background: -webkit-linear-gradient(#811217, #c1272d);
 		padding-top: 30px;
 		padding-bottom: 30px;
-		margin-left: -50px;
-		margin-right: -50px;
+		margin-left: -20px;
+		margin-right: -20px;
 	}
 
 
@@ -178,7 +178,6 @@
 		.ui-overlay-c /* This is for the body */
 		{
 			border: 1px solid #820f13;
-			color: #000 /*{a-body-color}*/;
 			text-shadow: 0 1px 0 #444444;
 			background-image: url(../img/ladybug.png);
 			
@@ -194,7 +193,6 @@
 		.ui-overlay-c /* This is for the body */
 		{
 			border: 1px solid #820f13;
-			color: #000 /*{a-body-color}*/;
 			text-shadow: 0 1px 0 #444444;
 			background-image: url(../img/ladybug.png);
 			
@@ -210,7 +208,6 @@
 		.ui-overlay-c /* This is for the body */
 		{
 			border: 1px solid #820f13;
-			color: #000 /*{a-body-color}*/;
 			text-shadow: 0 1px 0 #444444;
 			background-image: url(../img/ladybug.png);
 			
